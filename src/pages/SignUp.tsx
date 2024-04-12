@@ -2,7 +2,7 @@ import { Box, Image, Text, Link, Input, Button } from "@chakra-ui/react";
 import { Link as link } from "react-router-dom";
 import onboarding from "../assets/onboarding.png";
 
-const Login = () => {
+const SignUp = () => {
   return (
     <>
       <Box
@@ -35,7 +35,7 @@ const Login = () => {
         >
           <Box margin={"auto 0"} position={"relative"}>
             <Text fontSize={"4xl"} fontWeight={700}>
-              Sign In
+              Sign Up
             </Text>
             <Box mt={3} width={"100%"}>
               <form style={{ width: "100%" }}>
@@ -50,6 +50,13 @@ const Login = () => {
                   border={"1px solid #a1a1a1"}
                   width={"100%"}
                   placeholder="Password"
+                  mt={3}
+                />
+                <Input
+                  type="password"
+                  border={"1px solid #a1a1a1"}
+                  width={"100%"}
+                  placeholder="Confirm Password"
                   mt={3}
                 />
                 <Button
@@ -117,7 +124,7 @@ const Login = () => {
               </Box>
             </Box>
             <Text mt={3} textAlign={"center"} fontWeight={500}>
-              Don't have an account? <Link as={link} to="/signup"> Sign Up </Link>
+              Already have an account? <Link as={link} to="/login"> Sign In </Link>
             </Text>
           </Box>
         </Box>
@@ -126,4 +133,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default SignUp;
