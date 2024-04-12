@@ -7,7 +7,6 @@ const Onboarding = () => {
     <>
       <Box
         height={"100vh"}
-        p={3}
         display={"flex"}
         justifyContent={"space-between"}
       >
@@ -15,12 +14,11 @@ const Onboarding = () => {
           background={"black"}
           width={"49%"}
           height={"100%"}
-          borderRadius={15}
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
         >
-          <Image src={onboarding} width={300} />
+          <Image src={onboarding} width={400} />
         </Box>
         <Box width={"50%"} height={"100%"} borderRadius={15} display={"flex"} p={50}>
           <Box margin={"auto 0"} position={"relative"} p={35}>

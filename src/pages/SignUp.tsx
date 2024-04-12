@@ -5,32 +5,22 @@ import onboarding from "../assets/onboarding.png";
 const SignUp = () => {
   return (
     <>
-      <Box
-        height={"100vh"}
-        p={3}
-        display={"flex"}
-        justifyContent={"space-between"}
-      >
+      <Box height={"100vh"} display={"flex"} justifyContent={"space-between"}>
         <Box
           background={"black"}
           width={"49%"}
           height={"100%"}
-          borderRadius={15}
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
         >
-          <Image
-            src={onboarding}
-            width={300}
-            style={{ transform: "rotate('20deg')" }}
-          />
+          <Image src={onboarding} width={400} />
         </Box>
         <Box
           width={"50%"}
           height={"100%"}
-          borderRadius={15}
           display={"flex"}
+          justifyContent={"center"}
           p={50}
         >
           <Box margin={"auto 0"} position={"relative"}>
@@ -107,7 +97,7 @@ const SignUp = () => {
                   display={"flex"}
                   alignItems={"center"}
                   gap={2}
-                  _hover={{ backgroundColor:"#ffcc24" }}
+                  _hover={{ backgroundColor: "#ffcc24" }}
                 >
                   Google
                 </Button>
@@ -117,14 +107,18 @@ const SignUp = () => {
                   display={"flex"}
                   alignItems={"center"}
                   gap={2}
-                  _hover={{ backgroundColor:"#ffcc24" }}
+                  _hover={{ backgroundColor: "#ffcc24" }}
                 >
                   Facebook
                 </Button>
               </Box>
             </Box>
             <Text mt={3} textAlign={"center"} fontWeight={500}>
-              Already have an account? <Link as={link} to="/login"> Sign In </Link>
+              Already have an account?{" "}
+              <Link as={link} to="/login">
+                {" "}
+                Sign In{" "}
+              </Link>
             </Text>
           </Box>
         </Box>
