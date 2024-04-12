@@ -24,7 +24,7 @@ const Onboarding = () => {
         </Box>
         <Box width={"50%"} height={"100%"} borderRadius={15} display={"flex"} p={50}>
           <Box margin={"auto 0"} position={"relative"} p={35}>
-            <Text fontSize={"3xl"} fontWeight={900}> 
+            <Text fontSize={"5xl"} fontWeight={700}> 
               CheckMate
             </Text>
             <Text>
