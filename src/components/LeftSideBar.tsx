@@ -297,6 +297,7 @@ const LeftSideBar = () => {
                 backgroundColor={"#cfcfcf"}
                 textAlign={"center"}
                 px={3}
+                py={1}
                 borderRadius={5}
                 display={"flex"}
                 alignItems={"center"}
