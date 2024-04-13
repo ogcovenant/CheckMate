@@ -310,16 +310,16 @@ const LeftSideBar = () => {
             </List>
           </Box>
         </Box>
-        <Box mt={20}>
-          <Box display={"flex"} gap={3} alignItems={"center"}>
+        <Box mt={20} fontWeight={"500"}>
+          <Box display={"flex"} gap={3} alignItems={"center"} >
             <Text>
-            <Setting5 size="25"/>
+            <Setting5 size="20"/>
             </Text>
             <Text>Settings</Text>
           </Box>
-          <Box display={"flex"} gap={3} mt={3} alignItems={"center"}>
+          <Box display={"flex"} gap={3} mt={3} alignItems={"center"} >
             <Text>
-            <Logout size="25"/>
+            <Logout size="20"/>
             </Text>
             <Text>Sign Out</Text>
           </Box>
