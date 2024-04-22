@@ -3,6 +3,8 @@ import Login from "./pages/Login"
 import Onboarding from "./pages/Onboarding"
 import SignUp from "./pages/SignUp"
 import Home from "./pages/Home"
+import Today from "./pages/Today"
+import Upcoming from "./pages/Upcoming"
 
 function App() {
 
@@ -13,7 +15,10 @@ function App() {
           <Route path="/" element={<Onboarding />} />
           <Route path="/login" element={<Login />}/>
           <Route path="/signup" element={<SignUp />}/>
-          <Route path="/home" element={<Home />}/>
+          <Route path="/dashboard" element={<Home />}>
+            <Route index element={<Upcoming />}/>
+            <Route path="today" element={<Today />}/>
+          </Route>
         </Routes>
       </BrowserRouter>
     </>
