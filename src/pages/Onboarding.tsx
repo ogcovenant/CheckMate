@@ -36,7 +36,7 @@ const Onboarding = () => {
               as={link}
               fontSize={"md"}
               fontWeight={600}
-              to={"/login"}
+              to={"/signup"}
               mt={3}
               display={"block"}
               background={"#ffcc24"}

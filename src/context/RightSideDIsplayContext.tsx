@@ -7,7 +7,7 @@ interface ContextValue {
 }
 
 const rightSideBarContext = createContext<ContextValue>({
-  isOpen: true,
+  isOpen: false,
   setIsOpen: () => {},
   test: () => {}
 });
@@ -19,18 +19,13 @@ export const useRightSideBar = ()=>{
 
 export const RightSideDIsplayProvider = ({ children } : { children : ReactNode }) => {
 
-  const [isOpen, setIsOpen] = useState(true);
-
-  const test = () => {
-    console.log("Hello")
-  }
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <>
       <rightSideBarContext.Provider value={{
         isOpen,
         setIsOpen,
-        test
       }}>
         {children}
       </rightSideBarContext.Provider>

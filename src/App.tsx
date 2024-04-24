@@ -5,6 +5,7 @@ import SignUp from "./pages/SignUp"
 import Home from "./pages/Home"
 import Today from "./pages/Today"
 import Upcoming from "./pages/Upcoming"
+import StickyWall from "./pages/StickyWall"
 
 function App() {
 
@@ -18,6 +19,7 @@ function App() {
           <Route path="/dashboard" element={<Home />}>
             <Route index element={<Upcoming />}/>
             <Route path="today" element={<Today />}/>
+            <Route path="sticky-wall" element={<StickyWall />}/>
           </Route>
         </Routes>
       </BrowserRouter>
