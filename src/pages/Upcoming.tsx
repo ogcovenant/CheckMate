@@ -1,17 +1,22 @@
 import { Box, Text, Heading } from "@chakra-ui/react"
-import TodoContent from "../components/TodoContent"
+import Today from "../components/Today"
+import Tomorrow from "../components/Tomorrow"
+import ThisWeek from "../components/ThisWeek"
 
 const Upcoming = () => {
   return (
     <>
       <Box p={5} width={"90%"} height={"95vh"} overflowY={"auto"}>
         <Heading display={"flex"} alignItems={"center"} gap={8}>
-          <Text fontSize={"4xl"}>Upcoming</Text>
-          <Box border={"2px solid #00000026"} padding={"5px 15px"} borderRadius={8}>
-            <Text fontWeight={500}>4</Text>
-          </Box>
+          <Text fontSize={"3xl"}>Upcoming</Text>
         </Heading>
-        <TodoContent />
+        <Box mt={5}>
+          <Today />
+          <Box display={"flex"} mt={3} gap={"5"} flexWrap={"wrap"}>
+            <Tomorrow />
+            <ThisWeek />
+          </Box>
+        </Box>
       </Box>
     </>
   )
