@@ -11,10 +11,10 @@ const TodoItem = ({ todoName } : { todoName : string }) => {
 
   return (
     <>
-      <Box w={"full"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} borderBottom={"1px solid #00000026"} pb={2} cursor={"pointer"}>
+      <Box w={"full"} display={"flex"} onClick={() => {setIsOpen(true)}} justifyContent={"space-between"} alignItems={"center"} borderBottom={"1px solid #00000026"} pb={2} cursor={"pointer"}>
         <Box display={"flex"} gap={3} alignItems={"flex-start"} width={"90%"}>
         <Checkbox mt={1} />
-        <Stack direction={"column"} onClick={() => {setIsOpen(true)}}>
+        <Stack direction={"column"}>
             <Text fontSize={14}>{todoName}</Text>
             <Box display={"flex"}>
               <Box display={"flex"} gap={2} justifyContent={"center"} alignItems={"center"} width={32} textAlign={"center"} borderRight={"1px solid #00000026"}>
