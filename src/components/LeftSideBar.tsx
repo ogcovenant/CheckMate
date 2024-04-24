@@ -23,7 +23,7 @@ const LeftSideBar = () => {
         <Box
           p={5}
           backgroundColor={"#e3e3e3"}
-          width={"20%"}
+          minWidth={"20%"}
           borderRadius={15}
           height={"96vh"}
           overflowY={"auto"}
@@ -275,8 +275,8 @@ const LeftSideBar = () => {
         </Box>
       )}
       {!isOpen && (
-        <Box fontSize={"2xl"} cursor={"pointer"} onClick={handleDisplay} mt={8} w={"10%"} display={"flex"} justifyContent={"center"}>
-          <FaBars />
+        <Box fontSize={"2xl"} mt={8} w={"10%"} display={"flex"} justifyContent={"center"}>
+          <FaBars cursor={"pointer"} onClick={handleDisplay}/>
         </Box>
       )}
     </>
