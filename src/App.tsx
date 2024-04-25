@@ -4,8 +4,10 @@ import Onboarding from "./pages/Onboarding"
 import SignUp from "./pages/SignUp"
 import Home from "./pages/Home"
 import Today from "./pages/Today"
-import Upcoming from "./pages/Upcoming"
+import Tomorrow from "./pages/Tomorrow"
+import ThisWeek from "./pages/ThisWeek"
 import StickyWall from "./pages/StickyWall"
+import Events from "./pages/Events"
 
 function App() {
 
@@ -17,9 +19,11 @@ function App() {
           <Route path="/login" element={<Login />}/>
           <Route path="/signup" element={<SignUp />}/>
           <Route path="/dashboard" element={<Home />}>
-            <Route index element={<Upcoming />}/>
-            <Route path="today" element={<Today />}/>
+            <Route index element={<Today />}/>
+            <Route path="tomorrow" element={<Tomorrow />}/>
+            <Route path="this-week" element={<ThisWeek />}/>
             <Route path="sticky-wall" element={<StickyWall />}/>
+            <Route path="events" element={<Events />}/>
           </Route>
         </Routes>
       </BrowserRouter>

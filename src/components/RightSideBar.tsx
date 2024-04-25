@@ -15,15 +15,14 @@ import SubtaskTodoItem from "./SubtaskTodoItem";
 import { useRightSideBar } from "../context/RightSideDIsplayContext";
 
 const RightSideBar = () => {
-const {isOpen, setIsOpen } = useRightSideBar()
- 
 
+  const {isOpen, setIsOpen, type } = useRightSideBar()
 
   return (
     <>
-      {isOpen && (
+      {isOpen && type!=="event" && (
         <Box
-          minWidth={"25%"}
+          minWidth={"28%"}
           backgroundColor={"#e3e3e3"}
           borderRadius={18}
           p={5}
@@ -43,7 +42,7 @@ const {isOpen, setIsOpen } = useRightSideBar()
               <FaXmark />
             </Text>
           </Heading>
-          <Box mt={5} height={"82%"} overflow={"auto"} p={2}>
+          <Box mt={5} height={"83.5%"} overflow={"auto"} p={2}>
             <Input
               border={"1px solid #929292"}
               value={"Renew driver license"}
@@ -102,7 +101,7 @@ const {isOpen, setIsOpen } = useRightSideBar()
               </Box>
             </Box>
           </Box>
-          <Box display={"flex"} justifyContent={"center"} mt={5}>
+          <Box display={"flex"} justifyContent={"center"} mt={2} p={3}>
             <ButtonGroup spacing={5}>
               <Button
                 variant={"outline"}
@@ -127,6 +126,21 @@ const {isOpen, setIsOpen } = useRightSideBar()
           </Box>
         </Box>
       )}
+      {
+        isOpen && type==="event" && (
+          <Box
+            minWidth={"18%"}
+            backgroundColor={"#e3e3e3"}
+            borderRadius={18}
+            p={5}
+            height={"96vh"}
+            overflowY={"hidden"}
+            ml={5}
+          >
+            <Text>Hi</Text>
+          </Box>
+        )
+      }
     </>
   );
 };

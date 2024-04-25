@@ -1,9 +1,9 @@
 import { Box, Text, List, ListItem, ListIcon, Input } from "@chakra-ui/react";
 import { FaBars } from "react-icons/fa6";
-import { FaAnglesRight, FaListCheck, FaPlus } from "react-icons/fa6";
+import { FaListCheck, FaPlus } from "react-icons/fa6";
 import { FaStickyNote } from "react-icons/fa";
 import { IoCalendarNumber } from "react-icons/io5";
-import { Setting5, Logout } from "iconsax-react";
+import { Logout } from "iconsax-react";
 import { useState } from "react";
 
 const LeftSideBar = () => {
@@ -29,6 +29,7 @@ const LeftSideBar = () => {
           p={5}
           backgroundColor={"#e3e3e3"}
           minWidth={"20%"}
+          maxWidth={"20%"}
           borderRadius={15}
           height={"96vh"}
           overflowY={"auto"}
@@ -56,7 +57,7 @@ const LeftSideBar = () => {
             <Box mt={2} width={"100%"}>
               <List>
                 <ListItem width={"100%"} display={"flex"} alignItems={"center"}>
-                  <ListIcon as={FaAnglesRight}></ListIcon>
+                  <ListIcon as={FaListCheck}></ListIcon>
                   <Box
                     display={"flex"}
                     justifyContent={"space-between"}
@@ -64,7 +65,53 @@ const LeftSideBar = () => {
                     width={"100%"}
                     p={1}
                   >
-                    <Text>Upcoming</Text>
+                    <Text>Today</Text>
+                    <Box
+                      backgroundColor={"#bababa"}
+                      p={0.5}
+                      borderRadius={3}
+                      width={6}
+                      textAlign={"center"}
+                    >
+                      <Text fontWeight={500} fontSize={"sm"}>
+                        4
+                      </Text>
+                    </Box>
+                  </Box>
+                </ListItem>
+                <ListItem width={"100%"} display={"flex"} alignItems={"center"}>
+                  <ListIcon as={FaListCheck}></ListIcon>
+                  <Box
+                    display={"flex"}
+                    justifyContent={"space-between"}
+                    alignItems={"center"}
+                    width={"100%"}
+                    p={1}
+                  >
+                    <Text>Tomorrow</Text>
+                    <Box
+                      backgroundColor={"#bababa"}
+                      p={0.5}
+                      borderRadius={3}
+                      width={6}
+                      textAlign={"center"}
+                    >
+                      <Text fontWeight={500} fontSize={"sm"}>
+                        4
+                      </Text>
+                    </Box>
+                  </Box>
+                </ListItem>
+                <ListItem width={"100%"} display={"flex"} alignItems={"center"}>
+                  <ListIcon as={FaListCheck}></ListIcon>
+                  <Box
+                    display={"flex"}
+                    justifyContent={"space-between"}
+                    alignItems={"center"}
+                    width={"100%"}
+                    p={1}
+                  >
+                    <Text>This Week</Text>
                     <Box
                       backgroundColor={"#bababa"}
                       p={0.5}
@@ -84,34 +131,6 @@ const LeftSideBar = () => {
                   display={"flex"}
                   alignItems={"center"}
                 >
-                  <ListIcon as={FaListCheck}></ListIcon>
-                  <Box
-                    display={"flex"}
-                    justifyContent={"space-between"}
-                    alignItems={"center"}
-                    width={"100%"}
-                    p={1}
-                  >
-                    <Text>Today</Text>
-                    <Box
-                      backgroundColor={"#bababa"}
-                      p={0.5}
-                      borderRadius={3}
-                      width={6}
-                      textAlign={"center"}
-                    >
-                      <Text fontWeight={500} fontSize={"sm"}>
-                        12
-                      </Text>
-                    </Box>
-                  </Box>
-                </ListItem>
-                <ListItem
-                  mt={1}
-                  width={"100%"}
-                  display={"flex"}
-                  alignItems={"center"}
-                >
                   <ListIcon as={IoCalendarNumber} size={35}></ListIcon>
                   <Box
                     display={"flex"}
@@ -120,7 +139,7 @@ const LeftSideBar = () => {
                     width={"100%"}
                     p={1}
                   >
-                    <Text>Calendar</Text>
+                    <Text>Events</Text>
                   </Box>
                 </ListItem>
                 <ListItem
@@ -276,12 +295,6 @@ const LeftSideBar = () => {
             </Box>
           </Box>
           <Box mt={20} fontWeight={"500"}>
-            <Box display={"flex"} gap={3} alignItems={"center"}>
-              <Text>
-                <Setting5 size="20" />
-              </Text>
-              <Text>Settings</Text>
-            </Box>
             <Box display={"flex"} gap={3} mt={3} alignItems={"center"}>
               <Text>
                 <Logout size="20" />

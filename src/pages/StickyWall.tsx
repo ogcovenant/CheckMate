@@ -7,7 +7,7 @@ const StickyWall = () => {
     <>
       <Box p={3} height={"96vh"} overflowY={"auto"}>
         <Heading>
-          <Text>Sticky Wall</Text>
+          <Text fontSize={"3xl"}>Sticky Wall</Text>
         </Heading>
         <Box
           mt={5}
