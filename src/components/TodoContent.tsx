@@ -1,11 +1,7 @@
 import {
   Box,
-  Input,
-  InputLeftElement,
-  InputGroup,
-  Stack,
+  Stack
 } from "@chakra-ui/react";
-import { Add } from "iconsax-react";
 import TodoItem from "./TodoItem";
 
 const TodoContent = () => {
@@ -13,14 +9,6 @@ const TodoContent = () => {
   return (
     <>
       <Box mt={6} width={"full"}>
-        <Box className="addTodo">
-          <InputGroup width={"100%"}>
-            <InputLeftElement>
-              <Add size="32" color="black" />
-            </InputLeftElement>
-            <Input w={"full"} placeholder="Add New Task" />
-          </InputGroup>
-        </Box>
         <Box className="todoMain" mt={3} p={3}>
           <Stack gap={5}>
             <TodoItem todoName={"Research Content Ideas"} />
