@@ -1,17 +1,13 @@
 import { Box, Checkbox, Text, Stack } from "@chakra-ui/react";
 import { Calendar } from "iconsax-react";
 import { ArrowRight2 } from "iconsax-react";
-import RightSideBarDisplay from "../context/RightSideDIsplayContext";
-import { useContext } from "react";
 
 
 const TodoItem = ({ todoName } : { todoName : string }) => {
 
-  const { setIsOpen } = useContext(RightSideBarDisplay)
-
   return (
     <>
-      <Box w={"full"} display={"flex"} onClick={() => {setIsOpen(true)}} justifyContent={"space-between"} alignItems={"center"} borderBottom={"1px solid #00000026"} pb={2} cursor={"pointer"}>
+      <Box w={"full"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} borderBottom={"1px solid #00000026"} pb={2} cursor={"pointer"}>
         <Box display={"flex"} gap={3} alignItems={"flex-start"} width={"90%"}>
         <Checkbox mt={1} />
         <Stack direction={"column"}>

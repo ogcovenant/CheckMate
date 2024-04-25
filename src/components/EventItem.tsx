@@ -1,10 +1,10 @@
 import { Box, Text, Flex } from "@chakra-ui/react"
 import { Calendar, ArrowRight2, Clock, Location } from "iconsax-react"
 
-const EventItem = ({ setType, setIsOpen }) => {
+const EventItem = () => {
   return (
     <>
-       <Box w={"full"} display={"flex"} onClick={() => {setType("event"); setIsOpen(true)}} justifyContent={"space-between"} alignItems={"center"} borderBottom={"1px solid #00000026"} pb={2} cursor={"pointer"}>
+       <Box w={"full"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} borderBottom={"1px solid #00000026"} pb={2} cursor={"pointer"}>
         <Box display={"flex"} gap={3} alignItems={"flex-start"} width={"90%"}>
         <Flex direction={"column"} alignItems={"center"} width={"100%"} gap={2}>
             <Text fontSize={14}>Test Event is just testing testing testing</Text>

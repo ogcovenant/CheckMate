@@ -2,11 +2,8 @@ import { Box, Text, Heading, Button, Input, InputGroup, InputLeftElement, VStack
 import { FaPlus } from "react-icons/fa6"
 import { FaSearch } from "react-icons/fa"
 import EventItem from "../components/EventItem"
-import { useRightSideBar } from "../context/RightSideDIsplayContext"
 
 const Events = () => {
-
-  const { setType, setIsOpen } = useRightSideBar()
 
   return (
     <>
@@ -27,14 +24,14 @@ const Events = () => {
         </Box>
         <Box p={5}>
           <VStack gap={3}>
-            <EventItem setType={setType} setIsOpen={setIsOpen} />
-            <EventItem setType={setType} setIsOpen={setIsOpen} />
-            <EventItem setType={setType} setIsOpen={setIsOpen} />
-            <EventItem setType={setType} setIsOpen={setIsOpen} />
-            <EventItem setType={setType} setIsOpen={setIsOpen} />
-            <EventItem setType={setType} setIsOpen={setIsOpen} />
-            <EventItem setType={setType} setIsOpen={setIsOpen} />
-            <EventItem setType={setType} setIsOpen={setIsOpen} />
+            <EventItem />
+            <EventItem />
+            <EventItem />
+            <EventItem />
+            <EventItem />
+            <EventItem />
+            <EventItem />
+            <EventItem />
           </VStack>
         </Box>
       </Box>
