@@ -19,12 +19,12 @@ function App() {
           <Route path="/login" element={<Login />}/>
           <Route path="/signup" element={<SignUp />}/>
           <Route path="/dashboard" element={<Home />}>
-            <Route index element={<Today />}/>
-            <Route path="tomorrow" element={<Tomorrow />}/>
-            <Route path="this-week" element={<ThisWeek />}/>
-            <Route path="sticky-wall" element={<StickyWall />}/>
-            <Route path="events" element={<Events />}/>
-          </Route>
+              <Route index element={<Today />}/>
+              <Route path="tomorrow" element={<Tomorrow />}/>
+              <Route path="this-week" element={<ThisWeek />}/>
+              <Route path="sticky-wall" element={<StickyWall />}/>
+              <Route path="events" element={<Events />}/>
+            </Route>
         </Routes>
       </BrowserRouter>
     </>

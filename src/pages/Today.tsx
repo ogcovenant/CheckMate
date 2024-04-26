@@ -19,10 +19,13 @@ import {
 import TodoContent from "../components/TodoContent";
 import { FaPlus } from "react-icons/fa6";
 import SubtaskTodoItem from "../components/SubtaskTodoItem";
+import AddTaskModal from "../components/AddTaskModal";
 
 const Today = () => {
 
   const { isOpen, onClose, onOpen } = useDisclosure()
+
+  const { isOpen: isAddOpen, onClose: onAddClose, onOpen: onAddOpen } = useDisclosure()
 
   return (
     <>
@@ -55,13 +58,14 @@ const Today = () => {
                 alignItems={"center"}
                 gap={2}
                 _hover={{ backgroundColor: "#ffcc24" }}
+                onClick={onAddOpen}
               >
                 <FaPlus />
                 Add Task
               </Button>
             </Box>
           </Heading>
-          <TodoContent onOpen = {onOpen} />
+          <TodoContent onOpen={onOpen} />
         </Box>   
 
       <Modal isOpen={isOpen} onClose={onClose} size={"xl"} scrollBehavior="inside" isCentered>
@@ -110,13 +114,15 @@ const Today = () => {
             </Box>
           </ModalBody>
           <ModalFooter>
-          <Box display={"flex"} gap={3}>
+            <Box display={"flex"} gap={3}>
               <Button background={"#ffcc24"} _hover={{ background:"#ffcc24" }}>Save Changes</Button>
-              <Button border={"1px solid black"} background={"white"} _hover={{ backgroundColor:"red", color:"white" }}>Delete Task</Button>
+              <Button backgroundColor="red" color="white" _hover={{ background:"red", color:"white" }}>Delete Task</Button>
             </Box>
           </ModalFooter>
         </ModalContent>
       </Modal>
+
+      <AddTaskModal isOpen={isAddOpen} onClose={onAddClose}/>
     </>
   );
 };

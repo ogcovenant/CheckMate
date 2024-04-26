@@ -27,7 +27,7 @@ const TodoItem = ({ todoName, onOpen } : { todoName : string, onOpen: () => void
             </Box>
           </Stack>
         </Box>
-        <ArrowRight2 size="28" color="#000" variant="Outline"/>
+        <ArrowRight2 size="28" color="#000" variant="Outline" onClick={() => {onOpen()}}/>
       </Box>
     </>
   );
