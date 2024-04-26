@@ -10,10 +10,15 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-  useDisclosure
+  useDisclosure,
+  Input,
+  Select,
+  InputGroup,
+  InputLeftElement
 } from "@chakra-ui/react";
 import TodoContent from "../components/TodoContent";
 import { FaPlus } from "react-icons/fa6";
+import SubtaskTodoItem from "../components/SubtaskTodoItem";
 
 const Today = () => {
 
@@ -59,15 +64,50 @@ const Today = () => {
           <TodoContent onOpen = {onOpen} />
         </Box>   
 
-      <Modal isOpen={isOpen} onClose={onClose}>
-        <ModalOverlay />
+      <Modal isOpen={isOpen} onClose={onClose} size={"xl"} scrollBehavior="inside" isCentered>
+        <ModalOverlay backdropFilter={"blur(3px)"}/>
         <ModalContent>
           <ModalHeader>
-            <Text>Event</Text>
+            <Text fontSize={"3xl"} fontWeight={700}>Task:</Text>
             <ModalCloseButton />
           </ModalHeader>
           <ModalBody>
-            <Text>Testing</Text>
+            <Box>
+              <Input type="text" border={"1px solid black"} _hover={{ border:"1px solid black" }} value={"Research content ideas"}/>
+            </Box>
+            <Box display={"flex"} justifyContent={"space-between"} mt={5} alignItems={"center"}>
+              <Text>Due Date:</Text>
+              <Input type="date" width={"50%"} border={"1px solid black"} _hover={{ border:"1px solid black" }}/>
+            </Box>
+            <Box display={"flex"} justifyContent={"space-between"} mt={5} alignItems={"center"}>
+              <Text>List:</Text>
+              <Select width={"50%"} border={"1px solid black"} _hover={{ border:"1px solid black" }}>
+                <option value='option1'>Option 1</option>
+                <option value='option2'>Option 2</option>
+                <option value='option3'>Option 3</option>
+              </Select>
+            </Box>
+            <Box mt={5}>
+              <Text fontSize={"3xl"} fontWeight={700}>Subtasks:</Text>
+              <Box>
+                <InputGroup mt={3}>
+                  <InputLeftElement>
+                    <FaPlus />
+                  </InputLeftElement>
+                  <Input type="text" border={"1px solid black"} _hover={{ border:"1px solid black" }} placeholder="Add New Subtask"/>
+                </InputGroup>
+              </Box>
+              <Box p={5}>
+                <SubtaskTodoItem todoName="Testing" />
+                <SubtaskTodoItem todoName="Testing" />
+                <SubtaskTodoItem todoName="Testing" />
+                <SubtaskTodoItem todoName="Testing" />
+                <SubtaskTodoItem todoName="Testing" />
+                <SubtaskTodoItem todoName="Testing" />
+                <SubtaskTodoItem todoName="Testing" />
+                <SubtaskTodoItem todoName="Testing" />
+              </Box>
+            </Box>
           </ModalBody>
           <ModalFooter></ModalFooter>
         </ModalContent>
