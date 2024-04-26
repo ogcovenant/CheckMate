@@ -1,14 +1,14 @@
 import { Box, Text, Flex } from "@chakra-ui/react"
 import { Calendar, ArrowRight2, Clock, Location } from "iconsax-react"
 
-const EventItem = () => {
+const EventItem = ({ onOpen } : { onOpen: () => void } ) => {
   return (
     <>
-       <Box w={"full"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} borderBottom={"1px solid #00000026"} pb={2} cursor={"pointer"}>
+       <Box w={"full"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} borderBottom={"1px solid #00000026"} pb={2} cursor={"pointer"} onClick={onOpen}>
         <Box display={"flex"} gap={3} alignItems={"flex-start"} width={"90%"}>
-        <Flex direction={"column"} alignItems={"center"} width={"100%"} gap={2}>
+        <Flex direction={"column"} width={"100%"} gap={2}>
             <Text fontSize={14}>Test Event is just testing testing testing</Text>
-            <Box display={"flex"} justifyContent={"center"}>
+            <Box display={"flex"}>
               <Box display={"flex"} gap={2} justifyContent={"center"} alignItems={"center"} width={20} textAlign={"center"} borderRight={"1px solid #00000026"}>
                 <Clock size="15" color="#000"/>
                 <Text fontWeight={500} fontSize={14} color={"#DB0303"}>12:30</Text>

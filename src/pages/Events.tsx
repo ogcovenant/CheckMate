@@ -1,19 +1,57 @@
-import { Box, Text, Heading, Button, Input, InputGroup, InputLeftElement, VStack, useDisclosure } from "@chakra-ui/react"
-import { FaPlus } from "react-icons/fa6"
-import { FaSearch } from "react-icons/fa"
-import EventItem from "../components/EventItem"
-import AddEventModal from "../components/AddEventModal"
+import {
+  Box,
+  Text,
+  Heading,
+  Button,
+  Input,
+  InputGroup,
+  InputLeftElement,
+  VStack,
+  useDisclosure,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  ModalCloseButton,
+  Textarea
+} from "@chakra-ui/react";
+import { FaPlus } from "react-icons/fa6";
+import { FaSearch } from "react-icons/fa";
+import EventItem from "../components/EventItem";
+import AddEventModal from "../components/AddEventModal";
 
 const Events = () => {
 
-  const { isOpen: isAddOpen, onClose: onAddClose, onOpen: onAddOpen } = useDisclosure()
+  const {
+    isOpen: isAddOpen,
+    onClose: onAddClose,
+    onOpen: onAddOpen,
+  } = useDisclosure();
+
+  const { isOpen, onClose, onOpen } = useDisclosure()
 
   return (
     <>
       <Box p={5} width={"90%"} height={"96vh"} overflow={"auto"}>
-        <Heading display={"flex"} justifyContent={"space-between"} alignItems={"center"}>
+        <Heading
+          display={"flex"}
+          justifyContent={"space-between"}
+          alignItems={"center"}
+        >
           <Text fontSize={"3xl"}>Events</Text>
-          <Button display={"flex"} gap={2} alignItems={"center"} backgroundColor={"#ffcc24"} _hover={{ backgroundColor:"#ffcc24" }} onClick={onAddOpen}><FaPlus />Add Event</Button>
+          <Button
+            display={"flex"}
+            gap={2}
+            alignItems={"center"}
+            backgroundColor={"#ffcc24"}
+            _hover={{ backgroundColor: "#ffcc24" }}
+            onClick={onAddOpen}
+          >
+            <FaPlus />
+            Add Event
+          </Button>
         </Heading>
         <Box>
           <Box mt={5}>
@@ -21,27 +59,60 @@ const Events = () => {
               <InputLeftElement>
                 <FaSearch />
               </InputLeftElement>
-              <Input type="text" placeholder="Search for event"/>
+              <Input type="text" placeholder="Search for event" />
             </InputGroup>
           </Box>
         </Box>
         <Box p={5}>
-          <VStack gap={3}>
-            <EventItem />
-            <EventItem />
-            <EventItem />
-            <EventItem />
-            <EventItem />
-            <EventItem />
-            <EventItem />
-            <EventItem />
+          <VStack gap={5}>
+            <EventItem onOpen={onOpen} />
+            <EventItem onOpen={onOpen} />
+            <EventItem onOpen={onOpen} />
+            <EventItem onOpen={onOpen} />
+            <EventItem onOpen={onOpen} />
+            <EventItem onOpen={onOpen} />
+            <EventItem onOpen={onOpen} />
+            <EventItem onOpen={onOpen} />
           </VStack>
         </Box>
       </Box>
 
-      <AddEventModal isOpen={isAddOpen} onClose={onAddClose}/>
-    </>
-  )
-}
+      <Modal isOpen={isOpen} onClose={onClose} size={"xl"} scrollBehavior="inside" isCentered>
+        <ModalOverlay backdropFilter={"blur(3px)"}/>
+        <ModalContent>
+          <ModalHeader>
+            <Text fontSize={"3xl"} fontWeight={700}>Add Event</Text>
+            <ModalCloseButton />
+          </ModalHeader>
+          <ModalBody>
+            <Box>
+              <Input type="text" placeholder="Enter New Event Title" border={"1px solid black"} _hover={{ background:"1px solid black" }}/>
+            </Box>
+            <Box mt={5} display={"flex"} alignItems={"center"} justifyContent={"space-between"}>
+              <Text>Due Time:</Text>
+              <Input type={"time"} width={"70%"} border={"1px solid black"} _hover={{ background:"1px solid black" }}/>
+            </Box>
+            <Box  mt={5} display={"flex"} alignItems={"center"} justifyContent={"space-between"}>
+              <Text>Due Date:</Text>
+              <Input type="date" width={"70%"} border={"1px solid black"} _hover={{ background:"1px solid black" }}/>
+            </Box>
+            <Box  mt={5} display={"flex"} alignItems={"center"} justifyContent={"space-between"}>
+              <Text>Venue:</Text>
+              <Textarea height={150} resize={"none"} width={"70%"} border={"1px solid black"} _hover={{ background:"1px solid black" }}/>
+            </Box>
+          </ModalBody>
+          <ModalFooter>
+            <Box display={"flex"} gap={3}>
+              <Button background={"#ffcc24"} _hover={{ background:"#ffcc24" }}>Add Event</Button>
+              <Button backgroundColor="red" color="white" _hover={{ background:"red", color:"white" }}>Cancel</Button>
+            </Box>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
 
-export default Events
+      <AddEventModal isOpen={isAddOpen} onClose={onAddClose} />
+    </>
+  );
+};
+
+export default Events;
