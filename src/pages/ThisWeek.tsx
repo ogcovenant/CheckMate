@@ -87,7 +87,12 @@ const ThisWeek = () => {
               </Box>
             </Box>
           </ModalBody>
-          <ModalFooter></ModalFooter>
+          <ModalFooter>
+          <Box display={"flex"} gap={3}>
+              <Button background={"#ffcc24"} _hover={{ background:"#ffcc24" }}>Save Changes</Button>
+              <Button border={"1px solid black"} background={"white"} _hover={{ backgroundColor:"red", color:"white" }}>Delete Task</Button>
+            </Box>
+          </ModalFooter>
         </ModalContent>
       </Modal>
     </>
