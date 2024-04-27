@@ -1,4 +1,20 @@
-import { Box, Text, List, ListItem, ListIcon } from "@chakra-ui/react";
+import {
+  Box,
+  Text,
+  List,
+  ListItem,
+  ListIcon,
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalCloseButton,
+  ModalHeader,
+  ModalBody,
+  ModalFooter,
+  useDisclosure,
+  Input,
+  Button
+} from "@chakra-ui/react";
 import { FaBars } from "react-icons/fa6";
 import { FaListCheck, FaPlus } from "react-icons/fa6";
 import { FaStickyNote } from "react-icons/fa";
@@ -17,6 +33,7 @@ const LeftSideBar = () => {
     }
   };
 
+  const { isOpen: open, onOpen, onClose } = useDisclosure()
 
   return (
     <>
@@ -38,11 +55,7 @@ const LeftSideBar = () => {
             <Text fontSize={"2xl"} fontWeight={700}>
               Menu
             </Text>
-            <Box
-              fontSize={"2xl"}
-              cursor={"pointer"}
-              onClick={handleDisplay}
-            >
+            <Box fontSize={"2xl"} cursor={"pointer"} onClick={handleDisplay}>
               <FaBars />
             </Box>
           </Box>
@@ -264,6 +277,7 @@ const LeftSideBar = () => {
                   display={"flex"}
                   alignItems={"center"}
                   cursor={"pointer"}
+                  onClick={onOpen}
                 >
                   <ListIcon as={FaPlus}></ListIcon>
                   <Box
@@ -290,10 +304,41 @@ const LeftSideBar = () => {
         </Box>
       )}
       {!isOpen && (
-        <Box fontSize={"2xl"} mt={8} w={"10%"} display={"flex"} justifyContent={"center"}>
-          <FaBars cursor={"pointer"} onClick={handleDisplay}/>
+        <Box
+          fontSize={"2xl"}
+          mt={8}
+          w={"10%"}
+          display={"flex"}
+          justifyContent={"center"}
+        >
+          <FaBars cursor={"pointer"} onClick={handleDisplay} />
         </Box>
       )}
+
+      <Modal isOpen={open} onClose={onClose} size={"xl"} scrollBehavior="inside" isCentered>
+        <ModalOverlay backdropFilter={"blur(3px)"}/>
+        <ModalContent>
+          <ModalHeader>
+            <Text fontSize={"3xl"} fontWeight={700}>Add New List:</Text>
+            <ModalCloseButton />
+          </ModalHeader>
+          <ModalBody>
+            <Box display={"flex"} justifyContent={"center"} gap={3} alignItems={"center"}>
+              <Text fontWeight={600}>List Color:</Text>
+              <Input type="color" p={0} width={"50%"} border={"none"}/>
+            </Box>
+            <Box mt={5}>
+              <Input type="text" placeholder="Enter List Name" border={"1px solid black"} _hover={{ backgroundColor:"1px solid black" }}/>
+            </Box>
+          </ModalBody>
+          <ModalFooter>
+            <Box display={"flex"} gap={3}>
+              <Button background={"#ffcc24"} _hover={{ background:"#ffcc24" }}>Add List</Button>
+              <Button backgroundColor="red" color="white" _hover={{ background:"red", color:"white" }}>Cancel</Button>
+            </Box>
+          </ModalFooter>
+        </ModalContent>
+      </Modal>
     </>
   );
 };
