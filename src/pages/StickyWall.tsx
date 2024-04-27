@@ -104,7 +104,7 @@ const StickyWall = () => {
         <ModalOverlay backdropFilter={"blur(3px)"}/>
         <ModalContent>
           <ModalHeader>
-            <Text fontSize={"3xl"} fontWeight={700}>Add Note:</Text>
+            <Text fontSize={"3xl"} fontWeight={700}>Edit Note:</Text>
             <ModalCloseButton />
           </ModalHeader>
           <ModalBody>
@@ -115,8 +115,8 @@ const StickyWall = () => {
           </ModalBody>
           <ModalFooter>
             <Box display={"flex"} gap={3}>
-              <Button background={"#ffcc24"} _hover={{ background:"#ffcc24" }}>Add Note</Button>
-              <Button backgroundColor="red" color="white" _hover={{ background:"red", color:"white" }}>Cancel</Button>
+              <Button background={"#ffcc24"} _hover={{ background:"#ffcc24" }}>Save Changes</Button>
+              <Button backgroundColor="red" color="white" _hover={{ background:"red", color:"white" }}>Delete Note</Button>
             </Box>
           </ModalFooter>
         </ModalContent>
