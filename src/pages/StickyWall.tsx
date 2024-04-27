@@ -16,11 +16,14 @@ import {
 } from "@chakra-ui/react";
 import StickyNote from "../components/StickyNote";
 import { FaPlus } from "react-icons/fa6";
+import AddNoteModal from "../components/AddNoteModal";
 
 
 const StickyWall = () => {
 
   const { onOpen, onClose, isOpen } = useDisclosure()
+
+  const { isOpen: isAddNoteOpen, onClose: onAddNoteClose, onOpen: onAddNoteOpen } = useDisclosure()
 
   return (
     <>
@@ -28,7 +31,7 @@ const StickyWall = () => {
         <Heading p={3} display={"flex"} justifyContent={"space-between"} alignItems={"center"}>
           <Text fontSize={"3xl"}>Sticky Wall</Text>
           <Box>
-            <Button backgroundColor={"#ffcc24"} display={"flex"} alignItems={"center"} gap={2} _hover={{ backgroundColor: "#ffcc24" }}><FaPlus />Add Note</Button>
+            <Button backgroundColor={"#ffcc24"} display={"flex"} alignItems={"center"} gap={2} _hover={{ backgroundColor: "#ffcc24" }} onClick={onAddNoteOpen}><FaPlus />Add Note</Button>
           </Box>
         </Heading>
         <Box
@@ -118,6 +121,8 @@ const StickyWall = () => {
           </ModalFooter>
         </ModalContent>
       </Modal>
+
+      <AddNoteModal isOpen={isAddNoteOpen} onClose={onAddNoteClose}/>
     </>
   );
 };
