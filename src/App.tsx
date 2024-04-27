@@ -8,6 +8,7 @@ import Tomorrow from "./pages/Tomorrow"
 import ThisWeek from "./pages/ThisWeek"
 import StickyWall from "./pages/StickyWall"
 import Events from "./pages/Events"
+import List from "./pages/List"
 
 function App() {
 
@@ -24,6 +25,7 @@ function App() {
             <Route path="this-week" element={<ThisWeek />}/>
             <Route path="sticky-wall" element={<StickyWall />}/>
             <Route path="events" element={<Events />}/>
+            <Route path="list" element={<List />}/>
           </Route>
         </Routes>
       </BrowserRouter>

@@ -325,7 +325,7 @@ const LeftSideBar = () => {
           <ModalBody>
             <Box display={"flex"} justifyContent={"center"} gap={3} alignItems={"center"}>
               <Text fontWeight={600}>List Color:</Text>
-              <Input type="color" p={0} width={"50%"} border={"none"}/>
+              <Input type="color" p={0} width={"50%"} border={"none"} cursor={"pointer"}/>
             </Box>
             <Box mt={5}>
               <Input type="text" placeholder="Enter List Name" border={"1px solid black"} _hover={{ backgroundColor:"1px solid black" }}/>
