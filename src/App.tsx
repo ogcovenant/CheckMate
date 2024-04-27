@@ -9,6 +9,7 @@ import ThisWeek from "./pages/ThisWeek"
 import StickyWall from "./pages/StickyWall"
 import Events from "./pages/Events"
 import List from "./pages/List"
+import Settings from "./pages/Settings"
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
             <Route path="sticky-wall" element={<StickyWall />}/>
             <Route path="events" element={<Events />}/>
             <Route path="list" element={<List />}/>
+            <Route path="settings" element={<Settings />}/>
           </Route>
         </Routes>
       </BrowserRouter>

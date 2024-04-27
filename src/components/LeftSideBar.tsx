@@ -19,7 +19,7 @@ import { FaBars } from "react-icons/fa6";
 import { FaListCheck, FaPlus } from "react-icons/fa6";
 import { FaStickyNote } from "react-icons/fa";
 import { IoCalendarNumber } from "react-icons/io5";
-import { Logout } from "iconsax-react";
+import { Logout, Setting2 } from "iconsax-react";
 import { useState } from "react";
 
 const LeftSideBar = () => {
@@ -294,6 +294,12 @@ const LeftSideBar = () => {
             </Box>
           </Box>
           <Box mt={20} fontWeight={"500"}>
+          <Box display={"flex"} gap={3} mt={3} alignItems={"center"}>
+              <Text>
+                <Setting2 size="20" />
+              </Text>
+              <Text>Settings</Text>
+            </Box>
             <Box display={"flex"} gap={3} mt={3} alignItems={"center"}>
               <Text>
                 <Logout size="20" />
