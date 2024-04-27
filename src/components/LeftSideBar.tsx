@@ -1,4 +1,4 @@
-import { Box, Text, List, ListItem, ListIcon, Input } from "@chakra-ui/react";
+import { Box, Text, List, ListItem, ListIcon } from "@chakra-ui/react";
 import { FaBars } from "react-icons/fa6";
 import { FaListCheck, FaPlus } from "react-icons/fa6";
 import { FaStickyNote } from "react-icons/fa";
@@ -8,7 +8,6 @@ import { useState } from "react";
 
 const LeftSideBar = () => {
   const [isOpen, setIsOpen] = useState(true);
-  const [addList, setAddList] = useState(false)
 
   const handleDisplay = () => {
     if (isOpen) {
@@ -18,9 +17,6 @@ const LeftSideBar = () => {
     }
   };
 
-  const addNewList = () => {
-    setAddList(true)
-  }
 
   return (
     <>
@@ -267,7 +263,6 @@ const LeftSideBar = () => {
                   width={"100%"}
                   display={"flex"}
                   alignItems={"center"}
-                  onClick={addNewList}
                   cursor={"pointer"}
                 >
                   <ListIcon as={FaPlus}></ListIcon>
@@ -280,16 +275,6 @@ const LeftSideBar = () => {
                   >
                     <Text>Add New List</Text>
                   </Box>
-                </ListItem>
-                <ListItem mt={2}>
-                  {
-                    addList && (
-                      <Box display={"flex"} gap={2} alignItems={"center"} border={"1px solid #929292"} borderRadius={10} p={2}>
-                        <Input type="color" width={"15%"} height={8} p={0} border={"none"}/>
-                        <Input type="text" placeholder="List Name" height={8}/>
-                    </Box>
-                    )
-                  }
                 </ListItem>
               </List>
             </Box>

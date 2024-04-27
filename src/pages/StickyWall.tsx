@@ -36,11 +36,11 @@ const StickyWall = () => {
         </Heading>
         <Box
           mt={1}
-          p={5}
+          p={3}
           borderRadius={10}
           display={"flex"}
           flexWrap={"wrap"}
-          gap={5}
+          gap={3.5}
           justifyContent={"flex-start"}
         >
           <StickyNote
