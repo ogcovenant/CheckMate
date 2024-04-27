@@ -21,8 +21,10 @@ import { FaStickyNote } from "react-icons/fa";
 import { IoCalendarNumber } from "react-icons/io5";
 import { Logout, Setting2 } from "iconsax-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 const LeftSideBar = () => {
+
   const [isOpen, setIsOpen] = useState(true);
 
   const handleDisplay = () => {
@@ -65,14 +67,14 @@ const LeftSideBar = () => {
             </Text>
             <Box mt={2} width={"100%"}>
               <List>
-                <ListItem width={"100%"} display={"flex"} alignItems={"center"}>
-                  <ListIcon as={FaListCheck}></ListIcon>
+                <ListItem as={Link} to={"/dashboard"} width={"100%"} display={"flex"} alignItems={"center"} _hover={{ backgroundColor:"#7b7b7b", color:"white", mb:1, borderRadius:10 }}>
+                  <ListIcon pl={2} fontSize={"2xl"}><FaListCheck /></ListIcon>
                   <Box
                     display={"flex"}
                     justifyContent={"space-between"}
                     alignItems={"center"}
                     width={"100%"}
-                    p={1}
+                    p={2}
                   >
                     <Text>Today</Text>
                     <Box
@@ -88,14 +90,14 @@ const LeftSideBar = () => {
                     </Box>
                   </Box>
                 </ListItem>
-                <ListItem width={"100%"} display={"flex"} alignItems={"center"}>
-                  <ListIcon as={FaListCheck}></ListIcon>
+                <ListItem as={Link} to={"/dashboard/tomorrow"} width={"100%"} display={"flex"} alignItems={"center"} _hover={{  backgroundColor:"#7b7b7b", color:"white", mb:1, borderRadius:10 }}>
+                  <ListIcon pl={2} fontSize={"2xl"}><FaListCheck /></ListIcon>
                   <Box
                     display={"flex"}
                     justifyContent={"space-between"}
                     alignItems={"center"}
                     width={"100%"}
-                    p={1}
+                    p={2}
                   >
                     <Text>Tomorrow</Text>
                     <Box
@@ -111,14 +113,14 @@ const LeftSideBar = () => {
                     </Box>
                   </Box>
                 </ListItem>
-                <ListItem width={"100%"} display={"flex"} alignItems={"center"}>
-                  <ListIcon as={FaListCheck}></ListIcon>
+                <ListItem as={Link} to={"/dashboard/this-week"} width={"100%"} display={"flex"} alignItems={"center"} _hover={{  backgroundColor:"#7b7b7b", color:"white", mb:1, borderRadius:10 }}>
+                  <ListIcon pl={2} fontSize={"2xl"}><FaListCheck /></ListIcon>
                   <Box
                     display={"flex"}
                     justifyContent={"space-between"}
                     alignItems={"center"}
                     width={"100%"}
-                    p={1}
+                    p={2}
                   >
                     <Text>This Week</Text>
                     <Box
@@ -134,36 +136,26 @@ const LeftSideBar = () => {
                     </Box>
                   </Box>
                 </ListItem>
-                <ListItem
-                  mt={1}
-                  width={"100%"}
-                  display={"flex"}
-                  alignItems={"center"}
-                >
-                  <ListIcon as={IoCalendarNumber} size={35}></ListIcon>
+                <ListItem as={Link} to={"/dashboard/events"} width={"100%"} display={"flex"} alignItems={"center"} _hover={{  backgroundColor:"#7b7b7b", color:"white", mb:1, borderRadius:10 }}>
+                  <ListIcon pl={2} fontSize={"2xl"}><IoCalendarNumber /></ListIcon>
                   <Box
                     display={"flex"}
                     justifyContent={"space-between"}
                     alignItems={"center"}
                     width={"100%"}
-                    p={1}
+                    p={2}
                   >
                     <Text>Events</Text>
                   </Box>
                 </ListItem>
-                <ListItem
-                  mt={1}
-                  width={"100%"}
-                  display={"flex"}
-                  alignItems={"center"}
-                >
-                  <ListIcon as={FaStickyNote} size={35}></ListIcon>
+                <ListItem as={Link} to={"/dashboard/sticky-wall"} width={"100%"} display={"flex"} alignItems={"center"} _hover={{  backgroundColor:"#7b7b7b", color:"white", borderRadius:10 }}>
+                  <ListIcon pl={2} fontSize={"2xl"}><FaStickyNote /></ListIcon>
                   <Box
                     display={"flex"}
                     justifyContent={"space-between"}
                     alignItems={"center"}
                     width={"100%"}
-                    p={1}
+                    p={2}
                   >
                     <Text>Sticky Wall</Text>
                   </Box>
@@ -177,19 +169,20 @@ const LeftSideBar = () => {
             </Text>
             <Box mt={2} width={"100%"}>
               <List>
-                <ListItem width={"100%"} display={"flex"} alignItems={"center"}>
+                <ListItem as={Link} to={"/dashboard/list"} width={"100%"} display={"flex"} alignItems={"center"} _hover={{  backgroundColor:"#7b7b7b", color:"white", borderRadius:10 }}>
                   <ListIcon
                     as={Box}
                     borderRadius={5}
                     p={2.5}
                     backgroundColor={"#f21212"}
+                    ml={2}
                   ></ListIcon>
                   <Box
                     display={"flex"}
                     justifyContent={"space-between"}
                     alignItems={"center"}
                     width={"100%"}
-                    p={1}
+                    p={2}
                   >
                     <Text>List 1</Text>
                     <Box
@@ -205,24 +198,20 @@ const LeftSideBar = () => {
                     </Box>
                   </Box>
                 </ListItem>
-                <ListItem
-                  mt={1}
-                  width={"100%"}
-                  display={"flex"}
-                  alignItems={"center"}
-                >
+                <ListItem as={Link} to={"/dashboard/list"} width={"100%"} display={"flex"} alignItems={"center"} _hover={{  backgroundColor:"#7b7b7b", color:"white", borderRadius:10 }}>
                   <ListIcon
                     as={Box}
                     borderRadius={5}
                     p={2.5}
                     backgroundColor={"#16ffff"}
+                    ml={2}
                   ></ListIcon>
                   <Box
                     display={"flex"}
                     justifyContent={"space-between"}
                     alignItems={"center"}
                     width={"100%"}
-                    p={1}
+                    p={2}
                   >
                     <Text>List 2</Text>
                     <Box
@@ -238,24 +227,20 @@ const LeftSideBar = () => {
                     </Box>
                   </Box>
                 </ListItem>
-                <ListItem
-                  mt={1}
-                  width={"100%"}
-                  display={"flex"}
-                  alignItems={"center"}
-                >
+                <ListItem as={Link} to={"/dashboard/list"} width={"100%"} display={"flex"} alignItems={"center"} _hover={{  backgroundColor:"#7b7b7b", color:"white", borderRadius:10 }}>
                   <ListIcon
                     as={Box}
                     borderRadius={5}
                     p={2.5}
                     backgroundColor={"#c61fff"}
+                    ml={2}
                   ></ListIcon>
                   <Box
                     display={"flex"}
                     justifyContent={"space-between"}
                     alignItems={"center"}
                     width={"100%"}
-                    p={1}
+                    p={2}
                   >
                     <Text>List 3</Text>
                     <Box
@@ -273,19 +258,16 @@ const LeftSideBar = () => {
                 </ListItem>
                 <ListItem
                   mt={1}
-                  width={"100%"}
-                  display={"flex"}
-                  alignItems={"center"}
-                  cursor={"pointer"}
+                  width={"100%"} display={"flex"} alignItems={"center"} cursor={"pointer"} _hover={{  backgroundColor:"#7b7b7b", color:"white", borderRadius:10 }}
                   onClick={onOpen}
                 >
-                  <ListIcon as={FaPlus}></ListIcon>
+                  <ListIcon pl={2} fontSize={"2xl"}><FaPlus /></ListIcon>
                   <Box
                     display={"flex"}
                     justifyContent={"space-between"}
                     alignItems={"center"}
                     width={"100%"}
-                    p={1}
+                    p={2}
                   >
                     <Text>Add New List</Text>
                   </Box>
@@ -294,15 +276,15 @@ const LeftSideBar = () => {
             </Box>
           </Box>
           <Box mt={20} fontWeight={"500"}>
-          <Box display={"flex"} gap={3} mt={3} alignItems={"center"}>
+          <Box as={Link} to={"/dashboard/settings"} display={"flex"} gap={3} mt={3} alignItems={"center"}>
               <Text>
-                <Setting2 size="20" />
+                <Setting2 size="20"/>
               </Text>
               <Text>Settings</Text>
             </Box>
-            <Box display={"flex"} gap={3} mt={3} alignItems={"center"}>
+            <Box cursor={"pointer"} display={"flex"} gap={3} mt={3} alignItems={"center"}>
               <Text>
-                <Logout size="20" />
+                <Logout size="20"/>
               </Text>
               <Text>Sign Out</Text>
             </Box>
