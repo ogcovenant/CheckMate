@@ -5,29 +5,29 @@ import onboarding from "../assets/onboarding.png";
 const Onboarding = () => {
   return (
     <>
-      <Box height={"100vh"} display={"flex"} justifyContent={"space-between"}>
+      <Box height={"100vh"} display={"flex"} flexDirection={{ base:"column", xl:"row" }} justifyContent={{ base:"center", xl:"space-between" }}>
         <Box
           background={"black"}
-          width={"49%"}
-          height={"100%"}
+          width={{ base:"100%", xl:"49%" }}
+          height={{ base:"40vh", md:"50vh", xl:"100%" }}
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
         >
-          <Image src={onboarding} width={400} />
+          <Image src={onboarding} width={{ base:150, lg:400 }} />
         </Box>
         <Box
-          width={"50%"}
-          height={"100%"}
+          width={{ base:"100%", xl:"50%" }}
+          height={{ base:"60vh", md:"50vh", xl:"100%" }}
           borderRadius={15}
           display={"flex"}
-          p={50}
+          p={{ base:2, md:50 }}
         >
-          <Box margin={"auto 0"} position={"relative"} p={35}>
-            <Text fontSize={"5xl"} fontWeight={700}>
+          <Box margin={{ base:0, xl:"auto 0" }} position={"relative"} p={{ base:8, lg:35 }}>
+            <Text fontSize={{ base:"3xl", md:"6xl" }} fontWeight={700}>
               CheckMate
             </Text>
-            <Text>
+            <Text fontSize={{ base:14, md:18 }}>
               Your stress-free productivity solution. Simplify your tasks,
               reduce stress, and boost productivity with ease. Experience the
               peace of organized efficiency today.
