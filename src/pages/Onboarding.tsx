@@ -5,16 +5,16 @@ import onboarding from "../assets/onboarding.png";
 const Onboarding = () => {
   return (
     <>
-      <Box height={"100vh"} display={"flex"} flexDirection={{ base:"column", xl:"row" }} justifyContent={{ base:"center", xl:"space-between" }}>
+      <Box height={"100vh"} display={"flex"} flexDirection={{ base:"column", lg:"row" }} alignItems={{ lg:"center" }} justifyContent={{ base:"center", xl:"space-between" }}>
         <Box
           background={"black"}
           width={{ base:"100%", xl:"49%" }}
-          height={{ base:"40vh", md:"50vh", xl:"100%" }}
+          height={{ base:"40vh", md:"100vh", xl:"100%" }}
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
         >
-          <Image src={onboarding} width={{ base:150, lg:400 }} />
+          <Image src={onboarding} width={{ base:150, md:200, lg:300, xl:400 }} />
         </Box>
         <Box
           width={{ base:"100%", xl:"50%" }}
