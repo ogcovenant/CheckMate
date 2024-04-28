@@ -37,6 +37,8 @@ const LeftSideBar = () => {
 
   const { isOpen: open, onOpen, onClose } = useDisclosure()
 
+  const [activeTab, setActiveTab] = useState("today")
+
   return (
     <>
       {isOpen && (
@@ -67,7 +69,7 @@ const LeftSideBar = () => {
             </Text>
             <Box mt={2} width={"100%"}>
               <List>
-                <ListItem as={Link} to={"/dashboard"} width={"100%"} display={"flex"} alignItems={"center"} _hover={{ backgroundColor:"#7b7b7b", color:"white", mb:1, borderRadius:10 }}>
+                <ListItem as={Link} to={"/dashboard"} width={"100%"} display={"flex"} alignItems={"center"} mb={1} backgroundColor={ activeTab === "today" ? "#7b7b7b" : "" } color={ activeTab === "today" ? "white" : "" } borderRadius={ activeTab === "today" ? "10": "" }  _hover={ activeTab !== "today" ? { backgroundColor:"#cfcfcf", color:"black", borderRadius:10 } : {}} onClick={() => {setActiveTab("today")}}>
                   <ListIcon pl={2} fontSize={"2xl"}><FaListCheck /></ListIcon>
                   <Box
                     display={"flex"}
@@ -90,7 +92,7 @@ const LeftSideBar = () => {
                     </Box>
                   </Box>
                 </ListItem>
-                <ListItem as={Link} to={"/dashboard/tomorrow"} width={"100%"} display={"flex"} alignItems={"center"} _hover={{  backgroundColor:"#7b7b7b", color:"white", mb:1, borderRadius:10 }}>
+                <ListItem as={Link} to={"/dashboard/tomorrow"} width={"100%"} display={"flex"} alignItems={"center"} mb={1} backgroundColor={ activeTab === "tomorrow" ? "#7b7b7b" : "" } color={ activeTab === "tomorrow" ? "white" : "" } borderRadius={ activeTab === "tomorrow" ? "10": "" }  _hover={ activeTab !== "tomorrow" ? { backgroundColor:"#cfcfcf", color:"black", borderRadius:10 } : {} } onClick={() => {setActiveTab("tomorrow")}}>
                   <ListIcon pl={2} fontSize={"2xl"}><FaListCheck /></ListIcon>
                   <Box
                     display={"flex"}
@@ -113,7 +115,7 @@ const LeftSideBar = () => {
                     </Box>
                   </Box>
                 </ListItem>
-                <ListItem as={Link} to={"/dashboard/this-week"} width={"100%"} display={"flex"} alignItems={"center"} _hover={{  backgroundColor:"#7b7b7b", color:"white", mb:1, borderRadius:10 }}>
+                <ListItem as={Link} to={"/dashboard/this-week"} width={"100%"} display={"flex"} mb={1} alignItems={"center"} backgroundColor={ activeTab === "this-week" ? "#7b7b7b" : "" } color={ activeTab === "this-week" ? "white" : "" } borderRadius={ activeTab === "this-week" ? "10": "" }  _hover={ activeTab !== "this-week" ? { backgroundColor:"#cfcfcf", color:"black", borderRadius:10 } : {}} onClick={() => {setActiveTab("this-week")}}>
                   <ListIcon pl={2} fontSize={"2xl"}><FaListCheck /></ListIcon>
                   <Box
                     display={"flex"}
@@ -136,7 +138,7 @@ const LeftSideBar = () => {
                     </Box>
                   </Box>
                 </ListItem>
-                <ListItem as={Link} to={"/dashboard/events"} width={"100%"} display={"flex"} alignItems={"center"} _hover={{  backgroundColor:"#7b7b7b", color:"white", mb:1, borderRadius:10 }}>
+                <ListItem as={Link} to={"/dashboard/events"} width={"100%"} display={"flex"} mb={1} alignItems={"center"} backgroundColor={ activeTab === "events" ? "#7b7b7b" : "" } color={ activeTab === "events" ? "white" : "" } borderRadius={ activeTab === "events" ? "10": "" }  _hover={ activeTab !== "events" ? { backgroundColor:"#cfcfcf", color:"black", borderRadius:10 } : {}} onClick={() => {setActiveTab("events")}}>
                   <ListIcon pl={2} fontSize={"2xl"}><IoCalendarNumber /></ListIcon>
                   <Box
                     display={"flex"}
@@ -148,7 +150,7 @@ const LeftSideBar = () => {
                     <Text>Events</Text>
                   </Box>
                 </ListItem>
-                <ListItem as={Link} to={"/dashboard/sticky-wall"} width={"100%"} display={"flex"} alignItems={"center"} _hover={{  backgroundColor:"#7b7b7b", color:"white", borderRadius:10 }}>
+                <ListItem as={Link} to={"/dashboard/sticky-wall"} width={"100%"} display={"flex"} mb={1} alignItems={"center"} backgroundColor={ activeTab === "sticky-wall" ? "#7b7b7b" : "" } color={ activeTab === "sticky-wall" ? "white" : "" } borderRadius={ activeTab === "sticky-wall" ? "10": "" }  _hover={ activeTab !== "sticky-wall" ? { backgroundColor:"#cfcfcf", color:"black", borderRadius:10 } : {}} onClick={() => {setActiveTab("sticky-wall")}}>
                   <ListIcon pl={2} fontSize={"2xl"}><FaStickyNote /></ListIcon>
                   <Box
                     display={"flex"}
@@ -169,7 +171,7 @@ const LeftSideBar = () => {
             </Text>
             <Box mt={2} width={"100%"}>
               <List>
-                <ListItem as={Link} to={"/dashboard/list"} width={"100%"} display={"flex"} alignItems={"center"} _hover={{  backgroundColor:"#7b7b7b", color:"white", borderRadius:10 }}>
+                <ListItem as={Link} to={"/dashboard/list"} width={"100%"} display={"flex"} alignItems={"center"} mb={1} backgroundColor={ activeTab === "list1" ? "#7b7b7b" : "" } color={ activeTab === "list1" ? "white" : "" } borderRadius={ activeTab === "list1" ? "10": "" }  _hover={ activeTab !== "list1" ? { backgroundColor:"#cfcfcf", color:"black", borderRadius:10 } : {}} onClick={() => {setActiveTab("list1")}}>
                   <ListIcon
                     as={Box}
                     borderRadius={5}
@@ -198,7 +200,7 @@ const LeftSideBar = () => {
                     </Box>
                   </Box>
                 </ListItem>
-                <ListItem as={Link} to={"/dashboard/list"} width={"100%"} display={"flex"} alignItems={"center"} _hover={{  backgroundColor:"#7b7b7b", color:"white", borderRadius:10 }}>
+                <ListItem as={Link} to={"/dashboard/list"} width={"100%"} display={"flex"} alignItems={"center"} mb={1} backgroundColor={ activeTab === "list2" ? "#7b7b7b" : "" } color={ activeTab === "list2" ? "white" : "" } borderRadius={ activeTab === "list2" ? "10": "" }  _hover={ activeTab !== "list2" ? { backgroundColor:"#cfcfcf", color:"black", borderRadius:10 } : {}} onClick={() => {setActiveTab("list2")}}>
                   <ListIcon
                     as={Box}
                     borderRadius={5}
@@ -227,7 +229,7 @@ const LeftSideBar = () => {
                     </Box>
                   </Box>
                 </ListItem>
-                <ListItem as={Link} to={"/dashboard/list"} width={"100%"} display={"flex"} alignItems={"center"} _hover={{  backgroundColor:"#7b7b7b", color:"white", borderRadius:10 }}>
+                <ListItem as={Link} to={"/dashboard/list"} width={"100%"} display={"flex"} alignItems={"center"} mb={1} backgroundColor={ activeTab === "list3" ? "#7b7b7b" : "" } color={ activeTab === "list3" ? "white" : "" } borderRadius={ activeTab === "list3" ? "10": "" }  _hover={ activeTab !== "list3" ? { backgroundColor:"#cfcfcf", color:"black", borderRadius:10 } : {}} onClick={() => {setActiveTab("list3")}}>
                   <ListIcon
                     as={Box}
                     borderRadius={5}
@@ -258,7 +260,7 @@ const LeftSideBar = () => {
                 </ListItem>
                 <ListItem
                   mt={1}
-                  width={"100%"} display={"flex"} alignItems={"center"} cursor={"pointer"} _hover={{  backgroundColor:"#7b7b7b", color:"white", borderRadius:10 }}
+                  width={"100%"} display={"flex"} alignItems={"center"} cursor={"pointer"} mb={1} _hover={{ backgroundColor:"#cfcfcf", color:"black", borderRadius:10 }}
                   onClick={onOpen}
                 >
                   <ListIcon pl={2} fontSize={"2xl"}><FaPlus /></ListIcon>
