@@ -31,7 +31,17 @@ const StickyWall = () => {
         <Heading p={3} display={"flex"} justifyContent={"space-between"} alignItems={"center"}>
           <Text fontSize={"3xl"}>Sticky Wall</Text>
           <Box>
-            <Button backgroundColor={"#ffcc24"} display={"flex"} alignItems={"center"} gap={2} _hover={{ backgroundColor: "#ffcc24" }} onClick={onAddNoteOpen}><FaPlus />Add Note</Button>
+            <Button 
+                backgroundColor={"#ffcc24"}
+                display={"flex"}
+                alignItems={"center"}
+                gap={2}
+                _hover={{ backgroundColor: "#ffcc24" }}
+                onClick={onAddNoteOpen}
+                position={"fixed"}
+                bottom={5}
+                right={3}
+                zIndex={99}><FaPlus />Add Note</Button>
           </Box>
         </Heading>
         <Box
