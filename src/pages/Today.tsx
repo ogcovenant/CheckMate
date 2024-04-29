@@ -31,7 +31,7 @@ const Today = () => {
     <>
         <Box
           p={5}
-          minWidth={{ base:"100%", lg:"50%" }}
+          minWidth={{ base:"100%",md:"70%", lg:"50%" }}
           maxWidth={{ base:"100%", lg:"90%" }}
           height={"95vh"}
           overflowY={"auto"}
@@ -41,7 +41,7 @@ const Today = () => {
             alignItems={"center"}
             justifyContent={"space-between"}
           >
-            <Box display={"flex"} alignItems={"center"} gap={8}>
+            <Box display={"flex"} alignItems={"center"} gap={{ base:3, md:8 }}>
               <Text fontSize={"3xl"}>Today</Text>
               <Box
                 border={"2px solid #00000026"}
@@ -59,9 +59,13 @@ const Today = () => {
                 gap={2}
                 _hover={{ backgroundColor: "#ffcc24" }}
                 onClick={onAddOpen}
+                position={"fixed"}
+                bottom={5}
+                right={3}
+                zIndex={99}
               >
                 <FaPlus />
-                Add Task
+                <Text>Add Task</Text>
               </Button>
             </Box>
           </Heading>

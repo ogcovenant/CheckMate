@@ -10,7 +10,7 @@ const Home = () => {
 
   return (
     <>
-      <Box p={3} display={"flex"} overflowY={"hidden"}>
+      <Box p={3} display={"flex"} overflowY={"hidden"} overflowX={"hidden"}>
         <LeftSideBar />
         <Outlet />
       </Box>

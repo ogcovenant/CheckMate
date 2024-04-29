@@ -45,12 +45,14 @@ const LeftSideBar = () => {
         <Box
           p={5}
           backgroundColor={"#e3e3e3"}
-          minWidth={{ base:"100%", md:"35%", lg:"30%" }}
-          maxWidth={{ base:"100%", md:"35%", lg:"30%" }}
+          minWidth={{ base:"94%", md:"30%", lg:"30%", xl:"25%" }}
+          maxWidth={{ base:"94%", md:"30%", lg:"30%", xl:"25%" }}
           borderRadius={15}
           height={"97.5vh"}
+          maxHeight={ !isOpen ? "3vh": "97.5vh" }
           overflowY={"auto"}
           zIndex={999}
+          position={{ base:"fixed", md:"static" }}
         >
           <Box
             display={"flex"}
@@ -296,9 +298,10 @@ const LeftSideBar = () => {
       )}
       {!isOpen && (
         <Box
-          fontSize={"2xl"}
+          fontSize={"3xl"}
           mt={8}
           w={"10%"}
+          height={"2vh"}
           display={"flex"}
           justifyContent={"center"}
         >

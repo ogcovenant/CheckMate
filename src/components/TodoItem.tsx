@@ -7,11 +7,11 @@ const TodoItem = ({ todoName, onOpen } : { todoName : string, onOpen: () => void
   return (
     <>
       <Box w={"full"} display={"flex"} justifyContent={"space-between"} alignItems={"center"} borderBottom={"1px solid #00000026"} pb={2} cursor={"pointer"}>
-        <Box display={"flex"} gap={3} alignItems={"flex-start"} width={"90%"}>
-        <Checkbox mt={1} />
+        <Box display={"flex"} gap={3} alignItems={"flex-start"} width={{ base:"100%", md:"90%" }}>
+        <Checkbox mt={1}/>
         <Stack direction={"column"} onClick={() => {onOpen()}}>
-            <Text fontSize={14}>{todoName}</Text>
-            <Box display={"flex"}>
+            <Text fontSize={14} textAlign={"justify"}>{todoName}</Text>
+            <Box display={"flex"} flexDirection={{ base:"column", md:"row" }} gap={{ base:3 }} alignItems={{ base:"flex-start", lg:"" }}>
               <Box display={"flex"} gap={2} justifyContent={"center"} alignItems={"center"} width={32} textAlign={"center"} borderRight={"1px solid #00000026"}>
                 <Calendar size="15" color="#000" variant="Bold"/>
                 <Text fontWeight={500} fontSize={14}>22-04-2024</Text>
@@ -27,7 +27,9 @@ const TodoItem = ({ todoName, onOpen } : { todoName : string, onOpen: () => void
             </Box>
           </Stack>
         </Box>
-        <ArrowRight2 size="28" color="#000" variant="Outline" onClick={() => {onOpen()}}/>
+        <Box display={{ base:"none", lg:"block" }}>
+          <ArrowRight2 size="28" color="#000" variant="Outline" onClick={() => {onOpen()}}/>
+        </Box>
       </Box>
     </>
   );

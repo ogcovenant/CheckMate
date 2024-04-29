@@ -8,8 +8,8 @@ const TodoContent = ({ onOpen }: { onOpen: () => void } ) => {
 
   return (
     <>
-      <Box mt={6} width={"full"}>
-        <Box className="todoMain" mt={3} p={3}>
+      <Box mt={6} width={"full"} position={{ base:"relative", md:"static" }} left={{ base:-3, md:0 }}>
+        <Box className="todoMain" mt={3} p={1}>
           <Stack gap={5}>
             <TodoItem todoName={"Research Content Ideas"} onOpen={onOpen}/>
             <TodoItem todoName={"Test the development build"} onOpen={onOpen}/>
