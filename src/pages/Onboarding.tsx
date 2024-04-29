@@ -8,7 +8,7 @@ const Onboarding = () => {
       <Box height={"100vh"} display={"flex"} flexDirection={{ base:"column", lg:"row" }} alignItems={{ lg:"center" }} justifyContent={{ base:"center", xl:"space-between" }}>
         <Box
           background={"black"}
-          width={{ base:"100%", xl:"49%" }}
+          width={{ base:"100%", lg:"40vh", xl:"49%" }}
           height={{ base:"40vh", md:"100vh", xl:"100%" }}
           display={"flex"}
           justifyContent={"center"}
@@ -17,7 +17,7 @@ const Onboarding = () => {
           <Image src={onboarding} width={{ base:150, md:200, lg:300, xl:400 }} />
         </Box>
         <Box
-          width={{ base:"100%", xl:"50%" }}
+          width={{ base:"100%", lg:"60vh", xl:"50%" }}
           height={{ base:"60vh", md:"50vh", xl:"100%" }}
           borderRadius={15}
           display={"flex"}
