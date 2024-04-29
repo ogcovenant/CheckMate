@@ -31,8 +31,8 @@ const Today = () => {
     <>
         <Box
           p={5}
-          minWidth={"50%"}
-          maxWidth={"90%"}
+          minWidth={{ base:"100%", lg:"50%" }}
+          maxWidth={{ base:"100%", lg:"90%" }}
           height={"95vh"}
           overflowY={"auto"}
         >

@@ -45,11 +45,12 @@ const LeftSideBar = () => {
         <Box
           p={5}
           backgroundColor={"#e3e3e3"}
-          minWidth={"20%"}
-          maxWidth={"20%"}
+          minWidth={{ base:"100%", md:"35%", lg:"30%" }}
+          maxWidth={{ base:"100%", md:"35%", lg:"30%" }}
           borderRadius={15}
-          height={"96vh"}
+          height={"97.5vh"}
           overflowY={"auto"}
+          zIndex={999}
         >
           <Box
             display={"flex"}
