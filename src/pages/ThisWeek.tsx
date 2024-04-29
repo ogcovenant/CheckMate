@@ -30,16 +30,33 @@ const ThisWeek = () => {
 
   return (
     <>
-      <Box p={5} minWidth={"50%"} maxWidth={"90%"} height={"95vh"} overflowY={"auto"}>
+      <Box
+        p={5}
+        minWidth={{ base:"100%",md:"70%", lg:"50%" }}
+        maxWidth={{ base:"100%", lg:"90%" }}
+        height={"95vh"}
+        overflowY={"auto"}
+      >
         <Heading display={"flex"} alignItems={"center"} justifyContent={"space-between"}>
-          <Box display={"flex"} gap={8} alignItems={"center"}>
+          <Box display={"flex"} alignItems={"center"} gap={{ base:3, md:8 }}>
             <Text fontSize={"3xl"}>This Week</Text>
             <Box border={"2px solid #00000026"} padding={"5px 15px"} borderRadius={8}>
               <Text fontWeight={500}>12</Text>
             </Box>
           </Box>
           <Box>
-            <Button backgroundColor={"#ffcc24"} display={"flex"} alignItems={"center"} gap={2} _hover={{ backgroundColor: "#ffcc24" }} onClick={onAddOpen}><FaPlus />Add Task</Button>
+            <Button 
+               backgroundColor={"#ffcc24"}
+               display={"flex"}
+               alignItems={"center"}
+               gap={2}
+               _hover={{ backgroundColor: "#ffcc24" }}
+               onClick={onAddOpen}
+               position={"fixed"}
+               bottom={5}
+               right={3}
+               zIndex={99}  
+            ><FaPlus />Add Task</Button>
           </Box>
         </Heading>
         <TodoContent onOpen={onOpen} />
