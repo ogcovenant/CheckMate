@@ -46,16 +46,16 @@ const ThisWeek = () => {
           </Box>
           <Box>
             <Button 
-               backgroundColor={"#ffcc24"}
-               display={"flex"}
-               alignItems={"center"}
-               gap={2}
-               _hover={{ backgroundColor: "#ffcc24" }}
-               onClick={onAddOpen}
-               position={"fixed"}
-               bottom={5}
-               right={3}
-               zIndex={99}  
+              backgroundColor={"#ffcc24"}
+              display={"flex"}
+              alignItems={"center"}
+              gap={2}
+              _hover={{ backgroundColor: "#ffcc24" }}
+              onClick={onAddOpen}
+              position={"fixed"}
+              bottom={5}
+              right={3}
+              zIndex={99}  
             ><FaPlus />Add Task</Button>
           </Box>
         </Heading>

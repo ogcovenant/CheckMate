@@ -4,8 +4,6 @@ import {
   Heading,
   Button,
   Input,
-  InputGroup,
-  InputLeftElement,
   VStack,
   useDisclosure,
   Modal,
@@ -18,7 +16,6 @@ import {
   Textarea
 } from "@chakra-ui/react";
 import { FaPlus } from "react-icons/fa6";
-import { FaSearch } from "react-icons/fa";
 import EventItem from "../components/EventItem";
 import AddEventModal from "../components/AddEventModal";
 
@@ -42,27 +39,21 @@ const Events = () => {
         >
           <Text fontSize={"3xl"}>Events</Text>
           <Button
-            display={"flex"}
-            gap={2}
-            alignItems={"center"}
             backgroundColor={"#ffcc24"}
+            display={"flex"}
+            alignItems={"center"}
+            gap={2}
             _hover={{ backgroundColor: "#ffcc24" }}
             onClick={onAddOpen}
+            position={"fixed"}
+            bottom={5}
+            right={3}
+            zIndex={99} 
           >
             <FaPlus />
             Add Event
           </Button>
         </Heading>
-        <Box>
-          <Box mt={5}>
-            <InputGroup>
-              <InputLeftElement>
-                <FaSearch />
-              </InputLeftElement>
-              <Input type="text" placeholder="Search for event" />
-            </InputGroup>
-          </Box>
-        </Box>
         <Box p={5}>
           <VStack gap={5}>
             <EventItem onOpen={onOpen} />
