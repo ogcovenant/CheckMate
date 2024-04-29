@@ -62,6 +62,10 @@ const List = () => {
               gap={2}
               _hover={{ backgroundColor: "#ffcc24" }}
               onClick={onAddOpen}
+              position={"fixed"}
+              bottom={5}
+              right={3}
+              zIndex={99}
             >
               <FaPlus />
               Add Task

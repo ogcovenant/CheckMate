@@ -6,7 +6,7 @@ const Settings = () => {
     <>
       <Box p={3} width={"90%"}>
         <Heading>
-          <Text fontSize={"3xl"} fontWeight={700}>Settings</Text>
+          <Text fontSize={"3xl"} fontWeight={700} mt={3}>Settings</Text>
         </Heading>
         <Box mt={5}>
           <VStack gap={5}>
