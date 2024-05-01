@@ -58,60 +58,6 @@ const SignUp = () => {
                   Sign In
                 </Button>
               </form>
-              <Text
-                mt={3}
-                display={"flex"}
-                alignItems={"center"}
-                justifyContent={"space-between"}
-              >
-                <span
-                  style={{
-                    backgroundColor: "#a1a1a1",
-                    width: "45%",
-                    display: "block",
-                    height: 1,
-                  }}
-                ></span>
-                or
-                <span
-                  style={{
-                    backgroundColor: "#a1a1a1",
-                    width: "45%",
-                    display: "block",
-                    height: 1,
-                  }}
-                ></span>
-              </Text>
-              <Text
-                mt={3}
-                textAlign={"center"}
-                fontSize={"sm"}
-                fontWeight={600}
-              >
-                Continue With
-              </Text>
-              <Box mt={3} display={"flex"} justifyContent={"space-between"}>
-                <Button
-                  background={"#ffcc24"}
-                  width={"48%"}
-                  display={"flex"}
-                  alignItems={"center"}
-                  gap={2}
-                  _hover={{ backgroundColor: "#ffcc24" }}
-                >
-                  Google
-                </Button>
-                <Button
-                  background={"#ffcc24"}
-                  width={"48%"}
-                  display={"flex"}
-                  alignItems={"center"}
-                  gap={2}
-                  _hover={{ backgroundColor: "#ffcc24" }}
-                >
-                  Facebook
-                </Button>
-              </Box>
             </Box>
             <Text mt={3} textAlign={"center"} fontWeight={500} fontSize={14} mb={{ base:5, lg:0 }}>
               Already have an account?{" "}
