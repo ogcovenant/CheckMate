@@ -61,12 +61,23 @@ const SignUp = () => {
 
         location.replace("/dashboard")
 
-      } catch (err) {
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } catch (err : any) {
         setIsLoading(false) 
 
         if(err.response.status === 409){
           return toast({
             title: "User with email already exists",
+            status: "warning",
+            variant: "left-accent",
+            duration: 3000,
+            position: "top-right"
+          })
+        }
+
+        if(err.response.status === 406){
+          return toast({
+            title: "Invalid values provided",
             status: "warning",
             variant: "left-accent",
             duration: 3000,
