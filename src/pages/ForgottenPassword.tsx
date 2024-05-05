@@ -1,16 +1,16 @@
-import { Box, Image, Text, Input, Button, Spinner, useToast } from "@chakra-ui/react"
+import { Box, Image, Text, Input, Button, Spinner } from "@chakra-ui/react"
 import { useFormik } from "formik"
 import logo from "../assets/logo.png"
 import onboarding from "../assets/onboarding.png";
 import * as Yup from "yup"
 import { useState } from "react";
-import axios from "axios";
+// import axios from "axios";
 
 
 const ForgottenPassword = () => {
 
   const [ isLoading, setIsLoading ] = useState(false)
-  const toast = useToast();
+  // const toast = useToast();
 
   const formik = useFormik({
     initialValues: {
@@ -22,7 +22,8 @@ const ForgottenPassword = () => {
             .required("Required"),
     }),
     onSubmit: async(values) => {
-
+      setIsLoading(true)
+      console.log(values)
     }
   });
 
