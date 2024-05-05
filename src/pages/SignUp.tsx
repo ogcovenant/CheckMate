@@ -6,6 +6,7 @@ import * as Yup from "yup";
 import axios from "axios"
 import storeJWT from "../utils/storeJWT"
 import { useState } from "react";
+import logo from "../assets/logo.png"
 
 
 const SignUp = () => {
@@ -120,6 +121,7 @@ const SignUp = () => {
           p={50}
         >
           <Box margin={"auto 0"} position={"relative"} width={"100%"}>
+            <Image src={logo} width={{ base: 200, xl:300 }} margin={"0 auto"} mb={10}/>
             <Text fontSize={"4xl"} fontWeight={700}>
               Sign Up
             </Text>

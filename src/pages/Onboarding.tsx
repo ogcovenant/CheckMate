@@ -1,6 +1,7 @@
 import { Box, Image, Text, Link } from "@chakra-ui/react";
 import { Link as link } from "react-router-dom";
 import onboarding from "../assets/onboarding.png";
+import logo from "../assets/logo.png"
 
 const Onboarding = () => {
   return (
@@ -22,12 +23,11 @@ const Onboarding = () => {
           borderRadius={15}
           display={"flex"}
           p={{ base:2, md:50 }}
+          mb={5}
         >
           <Box margin={{ base:0, xl:"auto 0" }} position={"relative"} p={{ base:8, lg:35 }}>
-            <Text fontSize={{ base:"3xl", md:"6xl" }} fontWeight={700}>
-              CheckMate
-            </Text>
-            <Text fontSize={{ base:14, md:18 }}>
+            <Image src={logo} width={{ base: 200, xl:300 }} display={"flex"} justifyContent={"center"}/>
+            <Text fontSize={{ base:14, md:18 }} textAlign={"justify"}>
               Your stress-free productivity solution. Simplify your tasks,
               reduce stress, and boost productivity with ease. Experience the
               peace of organized efficiency today.
@@ -47,7 +47,7 @@ const Onboarding = () => {
             >
               Get Started
             </Link>
-            <Text mt={2} textAlign={"center"} fontWeight={500}>
+            <Text mt={2} textAlign={"center"} fontWeight={500} fontSize={{base:12, md:14}}>
               Already have an account?{" "}
               <Link as={link} to="/login">
                 {" "}

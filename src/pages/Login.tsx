@@ -6,6 +6,7 @@ import * as Yup from "yup"
 import { useState } from "react";
 import axios from "axios";
 import storeJWT from "../utils/storeJWT";
+import logo from "../assets/logo.png"
 
 const Login = () => {
 
@@ -123,6 +124,7 @@ const Login = () => {
           p={50}
         >
           <Box margin={"auto 0"} position={"relative"} width={"100%"}>
+            <Image src={logo} width={{ base: 200, xl:300 }} margin={"0 auto"} mb={10}/>
             <Text fontSize={"4xl"} fontWeight={700}>
               Sign In
             </Text>
@@ -165,7 +167,7 @@ const Login = () => {
                       ) : null
                   }
                 </Box>
-                <Text color={"blue"} fontSize={"sm"} textAlign={"right"} mt={3}>Forgotten password?</Text>
+                <Text as={link} to="/forgotten-password" color={"blue"} fontSize={"sm"} display={"flex"} justifyContent={"flex-end"} mt={3}>Forgotten password?</Text>
                 <Button
                   mt={3}
                   background={"#ffcc24"}

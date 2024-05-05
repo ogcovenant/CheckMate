@@ -10,6 +10,7 @@ import StickyWall from "./pages/StickyWall"
 import Events from "./pages/Events"
 import List from "./pages/List"
 import Settings from "./pages/Settings"
+import ForgottenPassword from "./pages/ForgottenPassword"
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/" element={<Onboarding />} />
           <Route path="/login" element={<Login />}/>
           <Route path="/signup" element={<SignUp />}/>
+          <Route path="/forgotten-password" element={<ForgottenPassword />}/>
           <Route path="/dashboard" element={<Home />}>
             <Route index element={<Today />}/>
             <Route path="tomorrow" element={<Tomorrow />}/>
