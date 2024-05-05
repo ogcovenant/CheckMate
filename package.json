@@ -14,7 +14,11 @@
     "@emotion/react": "^11.11.3",
     "@emotion/styled": "^11.11.0",
     "@types/draft-js": "^0.11.18",
+    "axios": "^1.6.8",
+    "crypto-js": "^4.2.0",
+    "dotenv": "^16.4.5",
     "draft-js": "^0.11.7",
+    "formik": "^2.4.6",
     "framer-motion": "^11.0.3",
     "iconsax-react": "^0.0.8",
     "prop-types": "^15.8.1",
@@ -24,9 +28,11 @@
     "react-icons": "^5.0.1",
     "react-router-dom": "^6.22.3",
     "slate": "^0.103.0",
-    "slate-react": "^0.102.0"
+    "slate-react": "^0.102.0",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
+    "@types/crypto-js": "^4.2.2",
     "@types/react": "^18.2.43",
     "@types/react-dom": "^18.2.17",
     "@typescript-eslint/eslint-plugin": "^6.14.0",
