@@ -22,6 +22,7 @@ import { IoCalendarNumber } from "react-icons/io5";
 import { Logout, Setting2 } from "iconsax-react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { deleteJWT } from "../utils/storeJWT";
 
 const LeftSideBar = () => {
 
@@ -38,6 +39,11 @@ const LeftSideBar = () => {
   const { isOpen: open, onOpen, onClose } = useDisclosure()
 
   const [activeTab, setActiveTab] = useState("today")
+
+  const logout = () => {
+    deleteJWT();
+    location.replace("/login")
+  }
 
   return (
     <>
@@ -287,7 +293,7 @@ const LeftSideBar = () => {
               </Text>
               <Text>Settings</Text>
             </Box>
-            <Box cursor={"pointer"} display={"flex"} gap={3} mt={3} alignItems={"center"}>
+            <Box cursor={"pointer"} display={"flex"} gap={3} mt={3} alignItems={"center"} onClick={() => logout()}>
               <Text>
                 <Logout size="20"/>
               </Text>
