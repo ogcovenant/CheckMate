@@ -25,7 +25,7 @@ const ForgottenPassword = () => {
       setIsLoading(true);
 
       try {
-        const res = await axios.post("http://localhost:3000/forgotten-password", {
+        const res = await axios.post("https://checkmateapi-i1gf.onrender.com/forgotten-password", {
           email: values.email,
         }, {
           headers:{

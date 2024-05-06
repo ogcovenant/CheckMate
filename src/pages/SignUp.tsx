@@ -39,7 +39,7 @@ const SignUp = () => {
       setIsLoading(true);
 
       try {
-        const res = await axios.post("http://localhost:3000/signup", {
+        const res = await axios.post("https://checkmateapi-i1gf.onrender.com/signup", {
           email: values.email,
           password: values.password
         }, {
