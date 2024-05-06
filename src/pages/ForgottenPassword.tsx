@@ -1,16 +1,16 @@
-import { Box, Image, Text, Input, Button, Spinner } from "@chakra-ui/react"
+import { Box, Image, Text, Input, Button, Spinner, useToast } from "@chakra-ui/react"
 import { useFormik } from "formik"
 import logo from "../assets/logo.png"
 import onboarding from "../assets/onboarding.png";
 import * as Yup from "yup"
 import { useState } from "react";
-// import axios from "axios";
+import axios from "axios";
 
 
 const ForgottenPassword = () => {
 
   const [ isLoading, setIsLoading ] = useState(false)
-  // const toast = useToast();
+  const toast = useToast();
 
   const formik = useFormik({
     initialValues: {
@@ -22,10 +22,67 @@ const ForgottenPassword = () => {
             .required("Required"),
     }),
     onSubmit: async(values) => {
-      setIsLoading(true)
-      console.log(values)
+      setIsLoading(true);
+
+      try {
+        const res = await axios.post("http://localhost:3000/forgotten-password", {
+          email: values.email,
+        }, {
+          headers:{
+            'Content-Type': 'application/json'
+          }
+        })
+        const data = res.data
+
+        setIsLoading(false);
+
+        toast({
+          title: data.msg,
+          description: "Check your email",
+          status: "success",
+          variant: "left-accent",
+          duration: 5000,
+          position: "top-right"
+        })
+
+        setTimeout(() => {
+          location.replace("/login")
+        }, 6000)
+
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      } catch (err : any) {
+        setIsLoading(false) 
+
+        if(err.response.status === 404){
+          return toast({
+            title: "User does not exist",
+            status: "warning",
+            variant: "left-accent",
+            duration: 3000,
+            position: "top-right"
+          })
+        }
+
+        if(err.response.status === 406){
+          return toast({
+            title: "Invalid email provided",
+            status: "warning",
+            variant: "left-accent",
+            duration: 3000,
+            position: "top-right"
+          })
+        }
+
+        toast({
+          title: "An unexpected error occured",
+          status: "error",
+          variant: "left-accent",
+          duration: 3000,
+          position: "top-right"
+        })        
+      }
     }
-  });
+});
 
 
   return (

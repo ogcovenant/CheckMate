@@ -96,9 +96,7 @@ const Login = () => {
           variant: "left-accent",
           duration: 3000,
           position: "top-right"
-        })
-       
-        
+        })        
       }
     }
 })
