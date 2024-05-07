@@ -75,13 +75,11 @@ const ResetPassword = () => {
           title: data.msg,
           status: "success",
           variant: "left-accent",
-          duration: 5000,
+          duration: 3000,
           position: "top-right",
         });
 
-        setTimeout(() => {
-          location.replace("/login");
-        }, 5000);
+        location.replace("/login");
 
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (err: any) {
@@ -97,9 +95,7 @@ const ResetPassword = () => {
             position: "top-right",
           });
 
-          setTimeout(() => {
-            location.replace("/forgotten-password")
-          })
+          location.replace("/forgotten-password")
         }
 
         if (err.response.status === 406) {

@@ -15,6 +15,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import backendURL from "../utils/getBackendLink";
 import getJWT from "../utils/getJWT";
+import { Link } from "react-router-dom";
 
 const ForgottenPassword = () => {
   const [isAuth, setIsAuth] = useState(false);
@@ -62,13 +63,11 @@ const ForgottenPassword = () => {
           description: "Check your email",
           status: "success",
           variant: "left-accent",
-          duration: 5000,
+          duration: 3000,
           position: "top-right",
         });
 
-        setTimeout(() => {
-          location.replace("/login");
-        }, 5000);
+        location.replace("/login");
 
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (err: any) {
@@ -184,6 +183,7 @@ const ForgottenPassword = () => {
                   </Button>
                 </form>
               </Box>
+              <Text as={Link} to={"/login"} color={"blue"} fontSize={"sm"} display={"flex"} justifyContent={"flex-end"} mt={3}>Go back to login</Text>
             </Box>
           </Box>
         </Box>
