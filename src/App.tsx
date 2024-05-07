@@ -11,6 +11,8 @@ import Events from "./pages/Events";
 import List from "./pages/List";
 import Settings from "./pages/Settings";
 import ForgottenPassword from "./pages/ForgottenPassword";
+import ResetPassword from "./pages/ResetPassword";
+
 
 function App() {
   return (
@@ -21,6 +23,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<SignUp />} />
           <Route path="/forgotten-password" element={<ForgottenPassword />} />
+          <Route path="/reset-password/:id" element={<ResetPassword />}/>
           <Route path="/dashboard" element={<Home />}>
             <Route index element={<Today />} />
             <Route path="tomorrow" element={<Tomorrow />} />

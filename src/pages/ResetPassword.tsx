@@ -1,23 +1,25 @@
+import { useState, useEffect } from "react";
+import getJWT from "../utils/getJWT";
 import {
   Box,
-  Image,
   Text,
+  Image,
   Input,
-  Button,
-  Spinner,
   useToast,
+  Spinner,
+  Button,
 } from "@chakra-ui/react";
-import { useFormik } from "formik";
-import logo from "../assets/logo.png";
 import onboarding from "../assets/onboarding.png";
 import * as Yup from "yup";
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { useFormik } from "formik";
 import backendURL from "../utils/getBackendLink";
-import getJWT from "../utils/getJWT";
+import axios from "axios";
+import logo from "../assets/logo.png";
+import { useParams } from "react-router-dom";
 
-const ForgottenPassword = () => {
+const ResetPassword = () => {
   const [isAuth, setIsAuth] = useState(false);
+  const params = useParams();
 
   useEffect(() => {
     const token = getJWT();
@@ -32,20 +34,32 @@ const ForgottenPassword = () => {
 
   const formik = useFormik({
     initialValues: {
-      email: "",
+      password: "",
+      cPassword: "",
     },
     validationSchema: Yup.object({
-      email: Yup.string().email("Invalid email address").required("Required"),
+      password: Yup.string()
+        .min(8, "Password must be at least 8 characters")
+        .matches(/[A-Z]/, "Password must contain at least one uppercase letter")
+        .matches(/[a-z]/, "Password must contain at least one lowercase letter")
+        .matches(/[0-9]/, "Password must contain at least one number")
+        .required("Required"),
+      cPassword: Yup.string()
+        .required("Passwords do not match")
+        .oneOf([Yup.ref("password")], "Passwords do not match"),
     }),
     onSubmit: async (values) => {
+      
+      const resetId = params.id;
       const URL = backendURL();
       setIsLoading(true);
 
       try {
         const res = await axios.post(
-          `${URL}/forgotten-password`,
+          `${URL}/reset-password`,
           {
-            email: values.email,
+            id: resetId,
+            password: values.password,
           },
           {
             headers: {
@@ -59,7 +73,6 @@ const ForgottenPassword = () => {
 
         toast({
           title: data.msg,
-          description: "Check your email",
           status: "success",
           variant: "left-accent",
           duration: 5000,
@@ -74,19 +87,24 @@ const ForgottenPassword = () => {
       } catch (err: any) {
         setIsLoading(false);
 
-        if (err.response.status === 404) {
-          return toast({
-            title: "User does not exist",
+        if (err.response.status === 401) {
+
+          toast({
+            title: "Reset code is invalid",
             status: "warning",
             variant: "left-accent",
             duration: 3000,
             position: "top-right",
           });
+
+          setTimeout(() => {
+            location.replace("/forgotten-password")
+          })
         }
 
         if (err.response.status === 406) {
           return toast({
-            title: "Invalid email provided",
+            title: "Invalid values provided",
             status: "warning",
             variant: "left-accent",
             duration: 3000,
@@ -148,28 +166,45 @@ const ForgottenPassword = () => {
                 mb={10}
               />
               <Text fontSize={"4xl"} fontWeight={700}>
-                Forgot your Password?
+                Reset your Password
               </Text>
               <Text fontSize={"sm"}>
-                Enter your email below and if an account is associated with the
-                email, a password reset link will be sent
+                Enter a new password to continue
               </Text>
               <Box mt={3} width={"100%"}>
                 <form style={{ width: "100%" }} onSubmit={formik.handleSubmit}>
                   <Box width={"100%"}>
                     <Input
-                      type="email"
+                      type="password"
                       border={"1px solid #a1a1a1"}
                       width={"100%"}
-                      placeholder="Email"
-                      name="email"
+                      placeholder="Enter new password"
+                      name="password"
                       onChange={formik.handleChange}
-                      value={formik.values.email}
+                      value={formik.values.password}
                       onBlur={formik.handleBlur}
                     />
-                    {formik.touched.email && formik.errors.email ? (
+                    {formik.touched.password && formik.errors.password ? (
                       <Text color={"red"} fontSize={"sm"}>
-                        {formik.errors.email}
+                        {formik.errors.password}
+                      </Text>
+                    ) : null}
+                  </Box>
+                  <Box width={"100%"}>
+                    <Input
+                      type="password"
+                      border={"1px solid #a1a1a1"}
+                      width={"100%"}
+                      placeholder="Confirm new password"
+                      name="cPassword"
+                      mt={1}
+                      onChange={formik.handleChange}
+                      value={formik.values.cPassword}
+                      onBlur={formik.handleBlur}
+                    />
+                    {formik.touched.cPassword && formik.errors.cPassword ? (
+                      <Text color={"red"} fontSize={"sm"}>
+                        {formik.errors.cPassword}
                       </Text>
                     ) : null}
                   </Box>
@@ -180,7 +215,7 @@ const ForgottenPassword = () => {
                     _hover={{ backgroundColor: "#ffcc24" }}
                     type="submit"
                   >
-                    {isLoading ? <Spinner /> : "Send Reset Link"}
+                    {isLoading ? <Spinner /> : "Reset password"}
                   </Button>
                 </form>
               </Box>
@@ -193,4 +228,4 @@ const ForgottenPassword = () => {
   );
 };
 
-export default ForgottenPassword;
+export default ResetPassword;
