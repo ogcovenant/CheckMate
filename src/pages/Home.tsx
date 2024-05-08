@@ -1,7 +1,7 @@
 import {
   Box
 } from "@chakra-ui/react";
-import LeftSideBar from "../components/LeftSideBar";
+import SideBar from "../components/SideBar";
 import { Outlet } from "react-router-dom";
 
 const Home = () => {
@@ -10,9 +10,11 @@ const Home = () => {
 
   return (
     <>
-      <Box p={3} display={"flex"} overflowY={"hidden"} overflowX={"hidden"}>
-        <LeftSideBar />
-        <Outlet />
+      <Box display={"flex"} overflowY={"hidden"} overflowX={"hidden"} backgroundColor={"#ffcc243f"} height={"100vh"} width={"100%"} overflow={"hidden"}>
+        <SideBar />
+        <Box m={2} backgroundColor={"#fff"} borderRadius={20}>
+          <Outlet />
+        </Box>
       </Box>
     </>
   );

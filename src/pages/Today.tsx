@@ -31,10 +31,6 @@ const Today = () => {
     <>
         <Box
           p={5}
-          minWidth={{ base:"100%",md:"70%", lg:"50%" }}
-          maxWidth={{ base:"100%", lg:"90%" }}
-          height={"95vh"}
-          overflowY={"auto"}
         >
           <Heading
             display={"flex"}
