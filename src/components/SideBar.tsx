@@ -2,8 +2,14 @@ import { Box, Image, List, ListItem, ListIcon, Text, VStack } from "@chakra-ui/r
 import logo from "../assets/logo.png"
 import { Calendar, TaskSquare, Notification, Setting, LogoutCurve } from "iconsax-react"
 import { deleteJWT } from "../utils/storeJWT";
+// import { useLocation } from 'react-router-dom';
 
 const SideBar = () => {
+
+  // const location = useLocation();
+  // const lastPath = location.pathname;
+
+  // console.log(lastPath)
 
   const logout = () => {
     deleteJWT();
@@ -37,7 +43,7 @@ const SideBar = () => {
         </Box>
         </Box>
         <Box display={"flex"} fontSize={16} fontWeight={500} gap={2} p={2} my={10} cursor={"pointer"} onClick={logout}>
-          <Text as={LogoutCurve} size={16}></Text>
+          <Text as={LogoutCurve}></Text>
           <Text>Logout</Text>
         </Box>
       </Box>
