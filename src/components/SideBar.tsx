@@ -4,7 +4,7 @@ import { Calendar, TaskSquare, Notification, Setting, LogoutCurve } from "iconsa
 import { deleteJWT } from "../utils/storeJWT";
 // import { useLocation } from 'react-router-dom';
 
-const SideBar = () => {
+export const SideBar = () => {
 
   // const location = useLocation();
   // const lastPath = location.pathname;
@@ -18,24 +18,24 @@ const SideBar = () => {
 
   return (
     <>
-      <Box width={"25%"} as={VStack} justify={"space-between"}>
+      <Box width={"15%"} as={VStack} justify={"space-between"}>
         <Box>
-        <Image src={logo} p={5}/>
+        <Image src={logo} p={5} width={200}/>
         <Box mt={2} fontSize={16} fontWeight={500} p={2}>
           <List spacing={2} w={"full"}>
-            <ListItem display={"flex"} alignItems={"center"} p={2} borderRadius={8} m={2} cursor={"pointer"} _hover={{ backgroundColor:"#e3e3e36f" }}> 
+            <ListItem display={"flex"} alignItems={"center"} p={2} borderRadius={8} m={2} cursor={"pointer"} _hover={{ backgroundColor:"#e3e3e3cf" }}> 
               <ListIcon as={TaskSquare}/>
-              <Text>Tasks</Text>
+              <Text>My Tasks</Text>
             </ListItem>
-            <ListItem display={"flex"} alignItems={"center"} p={2} borderRadius={8} m={2} cursor={"pointer"} _hover={{ backgroundColor:"#e3e3e36f" }}> 
+            <ListItem display={"flex"} alignItems={"center"} p={2} borderRadius={8} m={2} cursor={"pointer"} _hover={{ backgroundColor:"#e3e3e3cf" }}> 
               <ListIcon as={Calendar}/>
               <Text>Calendar</Text>
             </ListItem>
-            <ListItem display={"flex"} alignItems={"center"} p={2} borderRadius={8} m={2} cursor={"pointer"} _hover={{ backgroundColor:"#e3e3e36f" }}> 
+            <ListItem display={"flex"} alignItems={"center"} p={2} borderRadius={8} m={2} cursor={"pointer"} _hover={{ backgroundColor:"#e3e3e3cf" }}> 
               <ListIcon as={Notification}/>
               <Text>Notifications</Text>
             </ListItem>
-            <ListItem display={"flex"} alignItems={"center"} p={2} borderRadius={8} m={2} cursor={"pointer"} _hover={{ backgroundColor:"#e3e3e36f" }}> 
+            <ListItem display={"flex"} alignItems={"center"} p={2} borderRadius={8} m={2} cursor={"pointer"} _hover={{ backgroundColor:"#e3e3e3cf" }}> 
               <ListIcon as={Setting}/>
               <Text>Settings</Text>
             </ListItem>
@@ -51,4 +51,4 @@ const SideBar = () => {
   )
 }
 
-export default SideBar
+export default SideBar;

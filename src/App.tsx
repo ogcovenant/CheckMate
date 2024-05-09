@@ -1,14 +1,15 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Login from "./pages/Login";
-import Onboarding from "./pages/Onboarding";
-import SignUp from "./pages/SignUp";
-import Home from "./pages/Home";
-import Settings from "./pages/Settings";
-import ForgottenPassword from "./pages/ForgottenPassword";
-import ResetPassword from "./pages/ResetPassword";
+import Login from "./pages/Login.tsx";
+import Onboarding from "./pages/Onboarding.tsx";
+import SignUp from "./pages/SignUp.tsx";
+import Home from "./pages/Home.tsx";
+import Settings from "./pages/Settings.tsx";
+import ForgottenPassword from "./pages/ForgottenPassword.tsx";
+import ResetPassword from "./pages/ResetPassword.tsx";
+import Tasks from "./pages/Tasks.tsx";
 
 
-function App() {
+export function App() {
   return (
     <>
       <BrowserRouter>
@@ -19,7 +20,7 @@ function App() {
           <Route path="/forgotten-password" element={<ForgottenPassword />} />
           <Route path="/reset-password/:id" element={<ResetPassword />}/>
           <Route path="/dashboard" element={<Home />}>
-            
+            <Route index element={<Tasks />}/>
             <Route path="settings" element={<Settings />} />
           </Route>
         </Routes>

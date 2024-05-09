@@ -4,15 +4,13 @@ import {
 import SideBar from "../components/SideBar";
 import { Outlet } from "react-router-dom";
 
-const Home = () => {
-
-
+export const Home = () => {
 
   return (
     <>
-      <Box display={"flex"} overflowY={"hidden"} overflowX={"hidden"} backgroundColor={"#ffcc243f"} height={"100vh"} width={"100%"} overflow={"hidden"}>
+      <Box display={"flex"} backgroundColor={"#ffcc243f"} height={"100vh"} width={"100%"} overflow={"hidden"}>
         <SideBar />
-        <Box m={2} backgroundColor={"#fff"} borderRadius={20}>
+        <Box m={2} backgroundColor={"#fff"} borderRadius={20} width={"85%"} p={5} maxHeight={"99vh"} overflow={"auto"}>  
           <Outlet />
         </Box>
       </Box>
