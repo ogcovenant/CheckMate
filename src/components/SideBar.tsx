@@ -2,14 +2,13 @@ import { Box, Image, List, ListItem, ListIcon, Text, VStack } from "@chakra-ui/r
 import logo from "../assets/logo.png"
 import { Calendar, TaskSquare, Notification, Setting, LogoutCurve } from "iconsax-react"
 import { deleteJWT } from "../utils/storeJWT";
-// import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
 export const SideBar = () => {
 
-  // const location = useLocation();
-  // const lastPath = location.pathname;
-
-  // console.log(lastPath)
+  const webLocation = useLocation();
+  const lastPath = webLocation.pathname;
 
   const logout = () => {
     deleteJWT();
@@ -23,19 +22,19 @@ export const SideBar = () => {
         <Image src={logo} p={5} width={200}/>
         <Box mt={2} fontSize={16} fontWeight={500} p={2}>
           <List spacing={2} w={"full"}>
-            <ListItem display={"flex"} alignItems={"center"} p={2} borderRadius={8} m={2} cursor={"pointer"} _hover={{ backgroundColor:"#e3e3e3cf" }}> 
+            <ListItem display={"flex"} as={Link} to={"/dashboard"} alignItems={"center"} p={2} borderRadius={8} m={2} cursor={"pointer"} backgroundColor={ lastPath === "/dashboard" ? "#e3e3e3cf" : "" }> 
               <ListIcon as={TaskSquare}/>
               <Text>My Tasks</Text>
             </ListItem>
-            <ListItem display={"flex"} alignItems={"center"} p={2} borderRadius={8} m={2} cursor={"pointer"} _hover={{ backgroundColor:"#e3e3e3cf" }}> 
+            <ListItem display={"flex"} as={Link} to={"/dashboard/calendar"} alignItems={"center"} p={2} borderRadius={8} m={2} cursor={"pointer"} backgroundColor={ lastPath === "/dashboard/calendar" ? "#e3e3e3cf" : "" }> 
               <ListIcon as={Calendar}/>
               <Text>Calendar</Text>
             </ListItem>
-            <ListItem display={"flex"} alignItems={"center"} p={2} borderRadius={8} m={2} cursor={"pointer"} _hover={{ backgroundColor:"#e3e3e3cf" }}> 
+            <ListItem display={"flex"} as={Link} to={"/dashboard/notifications"} alignItems={"center"} p={2} borderRadius={8} m={2} cursor={"pointer"} backgroundColor={ lastPath === "/dashboard/notifications" ? "#e3e3e3cf" : "" }> 
               <ListIcon as={Notification}/>
               <Text>Notifications</Text>
             </ListItem>
-            <ListItem display={"flex"} alignItems={"center"} p={2} borderRadius={8} m={2} cursor={"pointer"} _hover={{ backgroundColor:"#e3e3e3cf" }}> 
+            <ListItem display={"flex"} as={Link} to={"/dashboard/settings"} alignItems={"center"} p={2} borderRadius={8} m={2} cursor={"pointer"} backgroundColor={ lastPath === "/dashboard/settings" ? "#e3e3e3cf" : "" }> 
               <ListIcon as={Setting}/>
               <Text>Settings</Text>
             </ListItem>

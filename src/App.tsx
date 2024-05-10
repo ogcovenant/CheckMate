@@ -7,6 +7,8 @@ import Settings from "./pages/Settings.tsx";
 import ForgottenPassword from "./pages/ForgottenPassword.tsx";
 import ResetPassword from "./pages/ResetPassword.tsx";
 import Tasks from "./pages/Tasks.tsx";
+import Calendar from "./pages/Calendar.tsx";
+import Notifications from "./pages/Notifications.tsx";
 
 
 export function App() {
@@ -21,6 +23,8 @@ export function App() {
           <Route path="/reset-password/:id" element={<ResetPassword />}/>
           <Route path="/dashboard" element={<Home />}>
             <Route index element={<Tasks />}/>
+            <Route path="calendar" element={ <Calendar /> }/>
+            <Route path="notifications" element={<Notifications/>}/>
             <Route path="settings" element={<Settings />} />
           </Route>
         </Routes>
