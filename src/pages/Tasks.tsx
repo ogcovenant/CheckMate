@@ -36,7 +36,7 @@ const Tasks = () => {
               border={"1px solid black"}
               placeholder="Search by  name, tags, categories e.t.c."
             />
-            <Button border={"1px solid #000"} background={"#fff"} width={60}>
+            <Button border={"1px solid #000"} background={"#fff"} width={32}>
               Filter
             </Button>
           </Box>

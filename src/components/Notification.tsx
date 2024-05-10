@@ -8,11 +8,11 @@ const Notification = ({ type } : { type : string}) => {
       <Box p={3} width={"95%"} display={"flex"} gap={3} alignItems={"flex-start"} borderBottom={"1px solid #0000002f"}>
         <Box>
           {
-            type === "completion" ? <TickCircle size={36} color="#21a600" /> : 
-            type === "creation" ? <ArchiveTick size={36} color="#21a600" /> :
+            type === "completion" ? <TickCircle size={36} color="green" /> : 
+            type === "creation" ? <ArchiveTick size={36} color="green" /> :
             type === "update" ? <ArrowRotateRight size="32" color="blue"/> :
-            type === "deletion" ? <Trash size="32" color="#f47373"/> :
-            type === "reminder" ? <Clock size="32" color="#ebca10"/> : ""
+            type === "deletion" ? <Trash size="32" color="red"/> :
+            type === "reminder" ? <Clock size="32" color="gold"/> : ""
           }
         </Box>
         <Box display={"flex"} flexDirection={"column"} >
