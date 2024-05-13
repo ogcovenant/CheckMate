@@ -1,6 +1,6 @@
 import { Box, Image, List, ListItem, ListIcon, Text, VStack } from "@chakra-ui/react"
 import logo from "../assets/logo.png"
-import { Calendar, TaskSquare, Notification, Setting, LogoutCurve } from "iconsax-react"
+import { Calendar, TaskSquare, Notification, Setting, LogoutCurve, TickCircle } from "iconsax-react"
 import { deleteJWT } from "../utils/storeJWT";
 import { useLocation } from 'react-router-dom';
 import { Link } from "react-router-dom";
@@ -25,6 +25,10 @@ export const SideBar = () => {
             <ListItem display={"flex"} as={Link} to={"/dashboard"} alignItems={"center"} p={2} borderRadius={8} m={2} cursor={"pointer"} backgroundColor={ lastPath === "/dashboard" ? "#e3e3e3cf" : "" }> 
               <ListIcon as={TaskSquare}/>
               <Text>My Tasks</Text>
+            </ListItem>
+            <ListItem display={"flex"} as={Link} to={"/dashboard/completed"} alignItems={"center"} p={2} borderRadius={8} m={2} cursor={"pointer"} backgroundColor={ lastPath === "/dashboard/completed" ? "#e3e3e3cf" : "" }> 
+              <ListIcon as={TickCircle}/>
+              <Text>Completed</Text>
             </ListItem>
             <ListItem display={"flex"} as={Link} to={"/dashboard/calendar"} alignItems={"center"} p={2} borderRadius={8} m={2} cursor={"pointer"} backgroundColor={ lastPath === "/dashboard/calendar" ? "#e3e3e3cf" : "" }> 
               <ListIcon as={Calendar}/>
